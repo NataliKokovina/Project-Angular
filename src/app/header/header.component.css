@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0 auto;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2%;
+    margin-right: 5%;
+}
+
+.heading__img_logo {
+    margin-top: 5px;
+
+}
+
+.nav {
+    height: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    list-style: none;
+    margin-left: 2%;
+}
+
+.nav-link {
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #17bed0;
+    padding: 15px;
+}
+
+.singIn{
+    font-size: 20px;
+}
