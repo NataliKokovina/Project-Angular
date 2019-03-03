@@ -18,13 +18,15 @@
 
 .searchForm_miniCaledar{
   position: absolute;
+  display: none;
 }
 
 .searchForm_numberPeople{
   position: absolute;
+  display: none;
 }
 
-.searchForm_numberPeople_active{
+.visible{
   display: flex;
 }
 
@@ -32,29 +34,33 @@
   width: 500px;
   height: 59px;
   font-size: 40px;
-  border: 1px solid #17bed0;
+  border: 1px solid #a2a2a2;
   color: #a2a2a2;
 }
 
 .imgItems{
-  fill: #17bed0;
+  fill: #a2a2a2;
   width: 50px;
   height: 50px;
   padding: 5px;
+}
+
+.imgItems:hover{
+  fill: #17bed0;
 }
 
 .searchForm_logoItems{
   margin-left: -1px;
   padding: 0 10px;
   background-color: #FFF;
-  border: 1px solid #17bed0;
+  border: 1px solid #a2a2a2;
 }
 
 .searchForm_searchButton{
   margin-left: -1px;
   padding: 0 30px;
-  background-color: #fc354c;
-  border: 1px solid #fc354c;
+  background-color: #17bed0;
+  border: 1px solid #17bed0;
 
 }
 
@@ -66,7 +72,6 @@
 }
 
 .searchForm_numberPeople{
-  display: flex;
   background-color: #FFF;
   border: 1px solid #17bed0;
 }
@@ -83,7 +88,6 @@
   display: inline-block;
   border: 1px solid transparent;
   padding: 15px;
-
 }
 
 .btn{
