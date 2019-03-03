@@ -1,0 +1,105 @@
+.homePage_backImg{
+  background-image: url('/assets/img/kvartiry.jpg');
+  height: 1000px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-start;
+  flex-grow: center;
+  margin: -130px auto;
+}
+
+.homePage_searchForm{
+  display: flex;
+  align-items: center;
+  flex-grow: center;
+  margin: 350px auto;
+}
+
+.searchForm_miniCaledar{
+  position: absolute;
+}
+
+.searchForm_numberPeople{
+  position: absolute;
+}
+
+.searchForm_numberPeople_active{
+  display: flex;
+}
+
+.searchForm_input{
+  width: 500px;
+  height: 59px;
+  font-size: 40px;
+  border: 1px solid #17bed0;
+  color: #a2a2a2;
+}
+
+.imgItems{
+  fill: #17bed0;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+}
+
+.searchForm_logoItems{
+  margin-left: -1px;
+  padding: 0 10px;
+  background-color: #FFF;
+  border: 1px solid #17bed0;
+}
+
+.searchForm_searchButton{
+  margin-left: -1px;
+  padding: 0 30px;
+  background-color: #fc354c;
+  border: 1px solid #fc354c;
+
+}
+
+.imgItemsSearch{
+  fill: #FFF;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+}
+
+.searchForm_numberPeople{
+  display: flex;
+  background-color: #FFF;
+  border: 1px solid #17bed0;
+}
+
+.input-numberPeople__value{
+  padding: 15px;
+  font-size: 20px;
+  color: #17bed0;
+}
+
+.input-numberPeople{
+  background: #17bed0;
+  background-color: transparent;
+  display: inline-block;
+  border: 1px solid transparent;
+  padding: 15px;
+
+}
+
+.btn{
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* .exmpl{
+  border: 2px solid #17bed0;
+} */

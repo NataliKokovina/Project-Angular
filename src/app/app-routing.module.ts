@@ -13,11 +13,13 @@ const routes: Routes = [
   { path: 'sing-in', component: SingInComponent },
   { path: 'sing-up', component: SingUpComponent },
   { path: 'search', component: SearchComponent },
-] 
+]
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [RouterModule],
-  
+
 })
 export class AppRoutingModule { }
+
+// loadChildren линивая загрузка ссылаемся на модуль и его название
