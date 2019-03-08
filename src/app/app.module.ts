@@ -9,6 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { SingInComponent } from './sing-in/sing-in.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { SearchComponent } from './search/search.component';
+import { HomeModule } from './home/home.module';
+import { MiniCalendarModule } from 'mini-calendar';
+import { ClickOutsideModule } from 'ng-click-outside';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +27,9 @@ import { SearchComponent } from './search/search.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HomeModule,
+    MiniCalendarModule,
+    ClickOutsideModule
   ],
   providers: [],
   bootstrap: [AppComponent, HeaderComponent, RentMyApartmentComponent, HomeComponent]

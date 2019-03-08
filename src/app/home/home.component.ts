@@ -6,8 +6,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  isMiniCalendar: boolean = false;
+  activeOfPeople: boolean = false;
+  clickOutsideCalendarEnabled: boolean = false;
+  clickOutsideMumberOfPeopleEnabled: boolean = false;
 
-  constructor() { }
+  constructor() {
+
+  }
+
+
+
+  miniCalendar(){
+    this.isMiniCalendar = !this.isMiniCalendar;
+    this.clickOutsideCalendarEnabled = this.isMiniCalendar;
+  }
+
+  numberOfPeople(){
+    this.activeOfPeople = !this.activeOfPeople;
+    this.clickOutsideMumberOfPeopleEnabled = this.activeOfPeople;
+  }
+
+  onClickOutsideCalendar(){
+      this.miniCalendar();
+}
+
+    onClickOutsideNumberOfPeople(){
+      this.numberOfPeople();
+  }
+
 
   ngOnInit() {
   }
