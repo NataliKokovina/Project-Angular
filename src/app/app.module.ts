@@ -12,13 +12,9 @@ import { SearchComponent } from './search/search.component';
 import { HomeModule } from './home/home.module';
 import { MiniCalendarModule } from 'mini-calendar';
 import { ClickOutsideModule } from 'ng-click-outside';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-// import { CityComponent } from './city/city.component';
-// import { DropdownListModule } from 'ngx-dropdown-list';
-// import { DropdownModule} from '/home/natali/git_dev/Angular/Project-Angular/node_modules/angular-dropdown-component';
-// import { HomeServiceService } from './home/home-service.service';
-// import { City } from './home/home';
+import { FormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +25,6 @@ import { HomeComponent } from './home/home.component';
     SingUpComponent,
     SearchComponent,
     HomeComponent
-
   ],
   imports: [
     BrowserModule,
@@ -37,8 +32,8 @@ import { HomeComponent } from './home/home.component';
     HomeModule,
     MiniCalendarModule,
     ClickOutsideModule,
-    ReactiveFormsModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent, HeaderComponent, RentMyApartmentComponent, HomeComponent]

@@ -1,26 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MiniCalendarModule } from 'mini-calendar';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { FormComponent } from './form/form.component';
+import { FormsModule} from '@angular/forms';
 
-// import { CityComponent } from 'src/app/city/city.component'
-// import { HomeComponent } from 'src/app/home/home.component';
-// import { HomeServiceService } from './home-service.service';
-// import { City } from '../home/home';
 
 @NgModule({
-  declarations: [],
+  declarations: [FormComponent],
   imports: [
     CommonModule,
     MiniCalendarModule,
     ClickOutsideModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: []
+  bootstrap: [],
+  exports: [FormComponent]
 })
 export class HomeModule { }
 
