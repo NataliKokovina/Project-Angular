@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Search } from '../search';
-import { toDate } from '@angular/common/src/i18n/format_date';
-import { MiniCalendarComponent } from 'mini-calendar';
-
+import { CalendarComponent } from '../../calendar/calendar.component';
 
 
 @Component({
@@ -16,9 +14,12 @@ export class FormComponent implements OnInit {
   clickOutsideCalendarEnabled: boolean = false;
   clickOutsideMumberOfPeopleEnabled: boolean = false;
   sumOfPeople: number = 1;
+  dateStart: Date;
+  dateFinish: Date;
+  formSubmited: boolean = false;
 
   public search: Search;
-  public calendar: MiniCalendarComponent;
+
 
   miniCalendar(){
     this.isMiniCalendar = !this.isMiniCalendar;
@@ -40,10 +41,11 @@ export class FormComponent implements OnInit {
 
     addPeople(){
       if(this.sumOfPeople < 5){
-        return this.sumOfPeople++;
+         this.sumOfPeople++;
       } else {
-        return this.sumOfPeople;
+        this.sumOfPeople;
       }
+      return this.search['people'] = this.sumOfPeople;
   }
 
     reducePeople(){
@@ -52,6 +54,7 @@ export class FormComponent implements OnInit {
       } else {
         this.sumOfPeople = 1;
       }
+      return this.search['people'] = this.sumOfPeople;
   }
 
   constructor() { }
@@ -65,5 +68,10 @@ export class FormComponent implements OnInit {
     }
     console.log(this.search);
   }
+  public submited(){
+    this.formSubmited = true;
+    // todo: прописать логику отправки данных
+  }
 
+  // todo: прописать логику передачи выбранной даты
 }
