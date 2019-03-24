@@ -9,7 +9,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit, AfterViewInit{
+export class FormComponent implements OnInit{
 
   isMiniCalendar: boolean = false;
   activeOfPeople: boolean = false;
@@ -22,7 +22,7 @@ export class FormComponent implements OnInit, AfterViewInit{
 
   public search: Search;
 
-  searchForm: FormGroup;
+  // searchForm: FormGroup; AfterViewInit
 
   miniCalendar(){
     this.isMiniCalendar = !this.isMiniCalendar;
@@ -60,7 +60,7 @@ export class FormComponent implements OnInit, AfterViewInit{
       return this.search['people'] = this.sumOfPeople;
   }
 
-  @ViewChild('calendar') calendar: any;
+  // @ViewChild('calendar') calendar: any;
   constructor() {
 
   }
@@ -73,9 +73,9 @@ export class FormComponent implements OnInit, AfterViewInit{
   ngOnInit() {
 
     // console.log(this.search);
-    this.initSearchForm();
+    // this.initSearchForm();
     this.search = {
-      city: this.city.value,
+      city: "Київ",
       people: this.sumOfPeople,
       dateStart: new Date(),
       dateLast: new Date(),
@@ -83,21 +83,21 @@ export class FormComponent implements OnInit, AfterViewInit{
     // todo: передача city
   }
   public submited(){
-    console.log(this.search );
+    // console.log(this.search ); this.city.value
     this.formSubmited = true;
     // todo: прописать логику отправки данных
   }
-  initSearchForm() {
-    this.searchForm = new FormGroup({
-      city: new FormControl(),
-    });
-    this.city.setValue('asasasa');
+  // initSearchForm() {
+  //   this.searchForm = new FormGroup({
+  //     city: new FormControl(),
+  //   });
+  //   this.city.setValue('asasasa');
 
-  }
-  get city() {
-    return this.searchForm.get('city');
-  }
-  ngAfterViewInit(): void {
-    this.calendar.log();
-  }
+  // }
+  // get city() {
+  //   return this.searchForm.get('city');
+  // }
+  // ngAfterViewInit(): void {
+  //   this.calendar.log();
+  // }
 }

@@ -12,7 +12,7 @@ import { SearchComponent } from './search/search.component';
 import { HomeModule } from './home/home.module';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { HomeComponent } from './home/home.component';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { CalendarModule } from './home/form/calendar/calendar.module';
 
 
@@ -30,7 +30,7 @@ import { CalendarModule } from './home/form/calendar/calendar.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
     HomeModule,
     ClickOutsideModule,
     HttpClientModule,

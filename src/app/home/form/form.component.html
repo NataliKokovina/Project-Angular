@@ -1,7 +1,7 @@
 {{search | json}}
-<form class="searchForm" (ngSubmit)="submited()" [formGroup]="searchForm">
-    <!-- <input class="searchForm_input" [(ngModel)]="search.city" name="city" type="text" required /> -->
-    <input class="searchForm_input" type="text" formControlName="city" />
+<form class="searchForm" (ngSubmit)="submited()" >
+    <input class="searchForm_input" [(ngModel)]="search.city" name="city" type="text" required />
+    <!-- <input class="searchForm_input" type="text" formControlName="city" />  [formGroup]="searchForm"-->
     <!-- pattern="[А-Я][а-яА-ЯїЇ' -]" <div *ngIf="ng-invalid" class="city-danger">
       <p>Не корректно вказана назва міста</p>
     </div> -->
