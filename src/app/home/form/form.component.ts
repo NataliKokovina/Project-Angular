@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Search } from '../search';
-import { CalendarComponent } from '../../calendar/calendar.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -8,7 +9,8 @@ import { CalendarComponent } from '../../calendar/calendar.component';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, AfterViewInit{
+
   isMiniCalendar: boolean = false;
   activeOfPeople: boolean = false;
   clickOutsideCalendarEnabled: boolean = false;
@@ -20,6 +22,7 @@ export class FormComponent implements OnInit {
 
   public search: Search;
 
+  searchForm: FormGroup;
 
   miniCalendar(){
     this.isMiniCalendar = !this.isMiniCalendar;
@@ -57,21 +60,44 @@ export class FormComponent implements OnInit {
       return this.search['people'] = this.sumOfPeople;
   }
 
-  constructor() { }
+  @ViewChild('calendar') calendar: any;
+  constructor() {
+
+  }
+
+  onStart({start: startDate, last: lastDate}){
+    this.search['dateStart'] = startDate;
+    this.search['dateLast'] = lastDate;
+  }
 
   ngOnInit() {
+
+    // console.log(this.search);
+    this.initSearchForm();
     this.search = {
-      city: "Київ",
+      city: this.city.value,
       people: this.sumOfPeople,
       dateStart: new Date(),
       dateLast: new Date(),
     }
-    console.log(this.search);
+    // todo: передача city
   }
   public submited(){
+    console.log(this.search );
     this.formSubmited = true;
     // todo: прописать логику отправки данных
   }
+  initSearchForm() {
+    this.searchForm = new FormGroup({
+      city: new FormControl(),
+    });
+    this.city.setValue('asasasa');
 
-  // todo: прописать логику передачи выбранной даты
+  }
+  get city() {
+    return this.searchForm.get('city');
+  }
+  ngAfterViewInit(): void {
+    this.calendar.log();
+  }
 }

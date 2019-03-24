@@ -1,5 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import {Calendar} from './calendar';
+import { validateConfig } from '@angular/router/src/config';
+import { platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+
+// interface IfDate{
+//   selectionBegin: Date;
+//   selectionEnd: Date;
+// }
 
 @Component({
   selector: 'app-calendar',
@@ -7,16 +14,25 @@ import {Calendar} from './calendar';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
+  @Output() start = new EventEmitter<{start: any, last:any}>();
+  // @Output() last: EventEmitter<any> = new EventEmitter();
+
   visible: boolean;
   calendar: Calendar;
-  selectionBegin: Date;
+  public selectionBegin: Date;
   selectionEnd: Date;
   ckickedLast: Date;
   ckickedEarlier: Date;
+
   constructor() {
     this.visible = false;
     this.calendar = new Calendar();
   }
+
+  // @Output() beginDate = new EventEmitter<Date>();
+  // beginDateSearch(day: Date) {
+  //     this.beginDate.emit(day);
+  // }
 
   ngOnInit() {
   }
@@ -24,17 +40,20 @@ export class CalendarComponent implements OnInit {
     if (!this.selectionBegin) {
       this.ckickedLast = new Date(date);
       this.selectionBegin = new Date(date);
-      return;
+      return this.selectionBegin;
     }
     this.ckickedEarlier = this.ckickedLast;
     this.ckickedLast = new Date(date);
     if (this.ckickedEarlier > this.ckickedLast) {
       this.selectionBegin = this.ckickedLast;
       this.selectionEnd = this.ckickedEarlier;
+      return this.selectionBegin, this.selectionEnd;
     } else {
       this.selectionBegin = this.ckickedEarlier;
       this.selectionEnd = this.ckickedLast;
+      return this.selectionBegin, this.selectionEnd;
     }
+
   }
   isSelectedDate(day: Date): boolean {
     if (this.selectionBegin) {
@@ -60,5 +79,17 @@ export class CalendarComponent implements OnInit {
   toggleCalendar(): void {
     this.visible = !this.visible;
   }
+
+  searchDate(){
+    this.start.emit({start: this.selectionBegin, last: this.selectionEnd});
+  }
+  log() {
+    console.log('log sdsdsdsdsdsdsdsdsd');
+  }
+
+  // searchDateLast(){
+  //   this.start.emit(this.selectionEnd);
+  // }
+
 }
 

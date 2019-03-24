@@ -78,7 +78,7 @@
   padding: 15px;
 }
 
-.btn{
+/* .btn{
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
@@ -89,7 +89,7 @@
   font-size: 1rem;
   line-height: 1.5;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
+} */
 
 .ng-valid[required], ng-valid.required {
   border-left: 4px solid #17bed0;
@@ -97,4 +97,11 @@
 
 .ng-invalid:not(form) {
   border-left: 4px solid red;
+}
+
+.city-danger{
+  background-color: red;
+  opacity: 80%;
+  color: red;
+  position: absolute;
 }

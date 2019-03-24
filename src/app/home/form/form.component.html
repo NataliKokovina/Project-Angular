@@ -1,6 +1,11 @@
 {{search | json}}
-<form class="searchForm" (ngSubmit)="submited()">
-    <input required  class="searchForm_input" [(ngModel)]="search.city" name="city" type="text"/>
+<form class="searchForm" (ngSubmit)="submited()" [formGroup]="searchForm">
+    <!-- <input class="searchForm_input" [(ngModel)]="search.city" name="city" type="text" required /> -->
+    <input class="searchForm_input" type="text" formControlName="city" />
+    <!-- pattern="[А-Я][а-яА-ЯїЇ' -]" <div *ngIf="ng-invalid" class="city-danger">
+      <p>Не корректно вказана назва міста</p>
+    </div> -->
+
     <div (clickOutside)="onClickOutsideCalendar()" [clickOutsideEnabled]="clickOutsideCalendarEnabled" >
       <button (click)="miniCalendar()" class="btn searchForm_logoItems" >
         <svg class="imgItems" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -9,7 +14,7 @@
         </svg>
       </button>
       <div [class.visible]="isMiniCalendar" class="searchForm_miniCaledar">
-          <app-calendar></app-calendar>
+          <app-calendar #calendar (start)="onStart($event)"></app-calendar>
       </div>
     </div>
 

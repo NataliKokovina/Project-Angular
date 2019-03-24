@@ -9,9 +9,11 @@
            *ngFor="let day of calendar.month"
            (click)="onCkick(day.dateObject)"
            [class.selected-date]="isSelectedDate(day.dateObject)"
-           [class.last-clicked]="isClickedLast(day.dateObject)">
+           [class.last-clicked]="isClickedLast(day.dateObject)"
+           (click)="searchDate()">
         <div class="day-value"
              [class.day-of-another-month]="!day.isCurrentMonth">{{day.dayOfMonth}}</div>
       </div>
     </div>
+
   </div>
