@@ -8,6 +8,7 @@ import { SearchService } from '../home/home-service.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  
 
   constructor(private cities: SearchService) {
 
