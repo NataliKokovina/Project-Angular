@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Search } from '../search';
-import { toDate } from '@angular/common/src/i18n/format_date';
-import { MiniCalendarComponent } from 'mini-calendar';
-
+import { CalendarComponent } from './calendar/calendar.component';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -10,15 +9,20 @@ import { MiniCalendarComponent } from 'mini-calendar';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit{
+
   isMiniCalendar: boolean = false;
   activeOfPeople: boolean = false;
   clickOutsideCalendarEnabled: boolean = false;
   clickOutsideMumberOfPeopleEnabled: boolean = false;
   sumOfPeople: number = 1;
+  dateStart: Date;
+  dateFinish: Date;
+  formSubmited: boolean = false;
 
   public search: Search;
-  public calendar: MiniCalendarComponent;
+
+  // searchForm: FormGroup; AfterViewInit
 
   miniCalendar(){
     this.isMiniCalendar = !this.isMiniCalendar;
@@ -40,10 +44,11 @@ export class FormComponent implements OnInit {
 
     addPeople(){
       if(this.sumOfPeople < 5){
-        return this.sumOfPeople++;
+         this.sumOfPeople++;
       } else {
-        return this.sumOfPeople;
+        this.sumOfPeople;
       }
+      return this.search['people'] = this.sumOfPeople;
   }
 
     reducePeople(){
@@ -52,18 +57,47 @@ export class FormComponent implements OnInit {
       } else {
         this.sumOfPeople = 1;
       }
+      return this.search['people'] = this.sumOfPeople;
   }
 
-  constructor() { }
+  // @ViewChild('calendar') calendar: any;
+  constructor() {
+
+  }
+
+  onStart({start: startDate, last: lastDate}){
+    this.search['dateStart'] = startDate;
+    this.search['dateLast'] = lastDate;
+  }
 
   ngOnInit() {
+
+    // console.log(this.search);
+    // this.initSearchForm();
     this.search = {
       city: "Київ",
       people: this.sumOfPeople,
       dateStart: new Date(),
       dateLast: new Date(),
     }
-    console.log(this.search);
+    // todo: передача city
   }
+  public submited(){
+    // console.log(this.search ); this.city.value
+    this.formSubmited = true;
+    // todo: прописать логику отправки данных
+  }
+  // initSearchForm() {
+  //   this.searchForm = new FormGroup({
+  //     city: new FormControl(),
+  //   });
+  //   this.city.setValue('asasasa');
 
+  // }
+  // get city() {
+  //   return this.searchForm.get('city');
+  // }
+  // ngAfterViewInit(): void {
+  //   this.calendar.log();
+  // }
 }

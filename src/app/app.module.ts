@@ -10,10 +10,11 @@ import { SingInComponent } from './sing-in/sing-in.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { SearchComponent } from './search/search.component';
 import { HomeModule } from './home/home.module';
-import { MiniCalendarModule } from 'mini-calendar';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { HomeComponent } from './home/home.component';
 import { FormsModule} from '@angular/forms';
+import { CalendarModule } from './home/form/calendar/calendar.module';
+
 
 
 @NgModule({
@@ -24,16 +25,17 @@ import { FormsModule} from '@angular/forms';
     SingInComponent,
     SingUpComponent,
     SearchComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // ReactiveFormsModule,
     HomeModule,
-    MiniCalendarModule,
     ClickOutsideModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CalendarModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent, HeaderComponent, RentMyApartmentComponent, HomeComponent]
