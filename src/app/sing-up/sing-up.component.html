@@ -1,6 +1,14 @@
-<!-- <form class="loginForm" (ngSubmit)="submited()">
-  <label for="name">Ваше Ім'я</label>
-    <input class="loginForm_input" [(ngModel)]="user.userName" name="name" id="name" type="text" required />
-    <label for="name">Ваш Email</label>
-    <input class="loginForm_input" [(ngModel)]="user.email" name="email" type="text" required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"/>
-</form> -->
+<div class="backLoginForm">
+    <div class="loginForm" >
+      <form class="loginForm_wrap" (ngSubmit)="submited()">
+          <label for="email">Електронна пошта</label>
+            <input class="loginForm_input" [(ngModel)]="userReg.email" name="email" id="email" type="text" #email="ngModel" required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"/>
+            <div class="invalidForm"[hidden]="email.valid || email.untouched"><p> Не корректний e-mail</p></div>
+            <label for="password" >Пароль</label>
+            <input class="loginForm_input" [(ngModel)]="userReg.password" name="password" type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"/>
+            <div class="invalidForm"[hidden]="password.valid || password.untouched"><p>Занадто простий пароль</p></div>
+            <button type="submit" class="btn loginForm_submit"> Зареєструватися </button>
+      </form>
+      {{ userReg | json }}
+    </div>
+  </div>
