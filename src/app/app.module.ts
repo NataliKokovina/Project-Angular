@@ -14,6 +14,8 @@ import { ClickOutsideModule } from 'ng-click-outside';
 import { HomeComponent } from './home/home.component';
 import { FormsModule} from '@angular/forms';
 import { CalendarModule } from './home/form/calendar/calendar.module';
+import { SingUpModule } from './sing-up/sing-up.module';
+import { SingInModule } from './sing-in/sing-in.module';
 
 
 
@@ -35,7 +37,9 @@ import { CalendarModule } from './home/form/calendar/calendar.module';
     ClickOutsideModule,
     HttpClientModule,
     FormsModule,
-    CalendarModule
+    CalendarModule,
+    SingUpModule,
+    SingInModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent, HeaderComponent, RentMyApartmentComponent, HomeComponent]

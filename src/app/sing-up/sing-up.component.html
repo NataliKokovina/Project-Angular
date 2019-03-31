@@ -1,14 +1,17 @@
 <div class="backLoginForm">
-    <div class="loginForm" >
-      <form class="loginForm_wrap" (ngSubmit)="submited()">
-          <label for="email">Електронна пошта</label>
-            <input class="loginForm_input" [(ngModel)]="userReg.email" name="email" id="email" type="text" #email="ngModel" required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"/>
-            <div class="invalidForm"[hidden]="email.valid || email.untouched"><p> Не корректний e-mail</p></div>
-            <label for="password" >Пароль</label>
-            <input class="loginForm_input" [(ngModel)]="userReg.password" name="password" type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"/>
-            <div class="invalidForm"[hidden]="password.valid || password.untouched"><p>Занадто простий пароль</p></div>
-            <button type="submit" class="btn loginForm_submit"> Зареєструватися </button>
-      </form>
-      {{ userReg | json }}
-    </div>
+  <div class="mask">
+      <div class="loginForm" >
+          <form class="loginForm_wrap" (ngSubmit)="submited()">
+              <input class="loginForm_input inputForm" [(ngModel)]="userReg.name" name="name" id="name" type="text" #name="ngModel" placeholder="Ваше ім'я" required/>
+                <!-- <label for="email">Електронна пошта</label> -->
+                <input class="loginForm_input inputForm" [(ngModel)]="userReg.email" name="email" id="email" type="text" #email="ngModel" placeholder="Електронна пошта" required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"/>
+                <div class="invalidForm"[hidden]="email.valid || email.untouched"><p> Не корректний e-mail</p></div>
+                <!-- <label for="password" >Пароль</label> -->
+                <input class="loginForm_input inputForm" [(ngModel)]="userReg.password" name="password" type="password" #password="ngModel" placeholder="Пароль" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"/>
+                <div class="invalidForm" [hidden]="password.valid || password.untouched"><p>Занадто простий пароль</p></div>
+                <button type="submit" class="btn inputForm loginForm_submit"> Зареєструватися </button>
+          </form>
+          {{ userReg | json }}
+        </div>
+  </div>
   </div>
