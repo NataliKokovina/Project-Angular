@@ -1,0 +1,76 @@
+/* .calendar-container{
+  position: relative;
+  display: inline-block;
+
+} */
+.calendar{
+  width: 200px;
+  position: absolute;
+  top: 100%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  left: 99px;
+  border: 1px solid #a2a2a2;
+}
+.day-bar{
+  width: calc(100% / 7);
+  height: 30px;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #a2a2a2;
+  cursor: default;
+  box-sizing: border-box;
+}
+.day-bar:hover{
+  border: 2px solid #a2a2a2;
+}
+.day-of-another-month{
+  color: lightgrey;
+}
+.days-container{
+  display: inline-block;
+}
+.calender-header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #17bed0;
+}
+.selected-date{
+  background-color: #17bed0;
+  color: #fff;
+}
+.last-clicked{
+  border: 2px solid #a2a2a2;
+}
+
+.chosedMonth{
+  padding-top: 5px;
+  color: #fff;
+}
+
+.btn-prev-next {
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 15px;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  background-color: transparent;
+  color: #fff;
+  padding: 5px 15px;
+  border: 1px solid transparent;
+}
+
+.btn-prev-next:hover{
+  font-weight: 800;
+}
+
+.btn-prev-next:active{
+  font-weight: 800;
+  border: 1px solid #a2a2a2;
+}

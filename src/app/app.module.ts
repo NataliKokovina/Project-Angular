@@ -10,15 +10,17 @@ import { SingInComponent } from './sing-in/sing-in.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { SearchComponent } from './search/search.component';
 import { HomeModule } from './home/home.module';
-import { MiniCalendarModule } from 'mini-calendar';
 import { ClickOutsideModule } from 'ng-click-outside';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-// import { CityComponent } from './city/city.component';
-// import { DropdownListModule } from 'ngx-dropdown-list';
-// import { DropdownModule} from '/home/natali/git_dev/Angular/Project-Angular/node_modules/angular-dropdown-component';
-// import { HomeServiceService } from './home/home-service.service';
-// import { City } from './home/home';
+import { FormsModule} from '@angular/forms';
+import { CalendarModule } from './home/form/calendar/calendar.module';
+import { SingUpModule } from './sing-up/sing-up.module';
+import { SingInModule } from './sing-in/sing-in.module';
+import { ListOfApartmentsComponent } from './search/list-of-apartments/list-of-apartments.component';
+import { ListOfParametersComponent } from './search/list-of-parameters/list-of-parameters.component';
+import { ApartamentInfComponent } from './search/apartament-inf/apartament-inf.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,19 +30,24 @@ import { HomeComponent } from './home/home.component';
     SingInComponent,
     SingUpComponent,
     SearchComponent,
-    HomeComponent
-
+    HomeComponent,
+    ListOfApartmentsComponent,
+    ListOfParametersComponent,
+    ApartamentInfComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // ReactiveFormsModule,
     HomeModule,
-    MiniCalendarModule,
     ClickOutsideModule,
-    ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
+    CalendarModule,
+    SingUpModule,
+    SingInModule
   ],
   providers: [HttpClientModule],
-  bootstrap: [AppComponent, HeaderComponent, RentMyApartmentComponent, HomeComponent]
+  bootstrap: [AppComponent, HeaderComponent, HomeComponent]
 })
 export class AppModule { }

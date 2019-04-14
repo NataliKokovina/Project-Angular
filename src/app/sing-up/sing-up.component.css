@@ -1,0 +1,56 @@
+.backLoginForm{
+  background-image: url('/assets/img/kvartiry.jpg');
+  height: 90vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: flex-start;
+  flex-grow: center;
+  align-items: center;
+  justify-content: center;
+}
+.mask{
+  background-color: #ffffffb2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90vh;
+}
+
+.loginForm_wrap{
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+  width: 500px;
+  height: 450px;
+  border: 2px solid #a2a2a28e;
+  color: #a2a2a2;
+  margin: 0 auto;
+}
+
+.ng-valid[required], ng-valid.required {
+  border-left: 4px solid #17bed0;
+}
+
+.ng-invalid:not(form) {
+  border-left: 4px solid red;
+}
+
+.inputForm{
+  width: 70%;
+  height: 45px;
+  margin: 1% auto;
+  font-size: 1rem;
+}
+
+.loginForm_submit{
+  background-color: #a2a2a2;
+  color: #fff;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+.loginForm_submit:hover{
+  background-color: #17bed0;
+}

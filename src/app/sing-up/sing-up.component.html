@@ -1,3 +1,17 @@
-<p>
-  sing-up works!
-</p>
+<div class="backLoginForm">
+  <div class="mask">
+      <div class="loginForm" >
+          <form class="loginForm_wrap" (ngSubmit)="submited()">
+              <input class="loginForm_input inputForm" [(ngModel)]="userReg.name" name="name" id="name" type="text" #name="ngModel" placeholder="Ваше ім'я" required/>
+                <input class="loginForm_input inputForm" [(ngModel)]="userReg.email" name="email" id="email" type="text" #email="ngModel" placeholder="Електронна пошта" required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"/>
+                <div class="invalidForm"[hidden]="email.valid || email.untouched"><p> Не корректний e-mail</p></div>
+                <input class="loginForm_input inputForm" [(ngModel)]="userReg.tel" name="tel" id="tel" type="tel" #tel="ngModel" placeholder="Телефон" required pattern="[38][0-9]{3}[0-9]{3}[0-9]{4}">
+                <div class="invalidForm"[hidden]="tel.valid || tel.untouched"><p> Не корректний телефон</p></div>
+                <input class="loginForm_input inputForm" [(ngModel)]="userReg.password" name="password" type="password" #password="ngModel" placeholder="Пароль" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"/>
+                <div class="invalidForm" [hidden]="password.valid || password.untouched"><p>Занадто простий пароль</p></div>
+                <button type="submit" class="btn inputForm loginForm_submit"> Зареєструватися </button>
+          </form>
+          {{ userReg | json }}
+        </div>
+  </div>
+  </div>

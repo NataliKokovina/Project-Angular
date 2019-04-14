@@ -1,0 +1,140 @@
+{
+  "apartmentList":
+  [{
+      "name": 1,
+      "guests": 5,
+      "photo": "/assets/img/1.jpg",
+      "adress": {
+        "city": "Київ",
+        "street": "Шевченка",
+        "house": "2",
+        "apartment": "14"
+      },
+      "rentType": "Все помешкання",
+      "placeType": "Приватний будинок",
+      "beds": 2,
+      "kitchenAppliances":  {
+        "plate": true,
+        "oven": true,
+        "dishwasher": false,
+        "washingMachine": true,
+        "microwave": false
+      },
+      "amenities":  {
+        "essentialThings": true,
+        "internet": true,
+        "tv": false,
+        "heating": true,
+        "workplace": false
+      }
+  },{
+      "name": "2",
+      "guests": 2,
+      "photo":"/assets/img/2.jpg",
+      "adress": {
+        "city": "Суми",
+        "street": "Шевченка",
+        "house": "2",
+        "apartment": "4"
+      },
+      "rentType": "Все помешкання",
+      "placeType": "Приватний будинок",
+      "beds": 2,
+      "kitchenAppliances":  {
+        "plate": true,
+        "oven": true,
+        "dishwasher": false,
+        "washingMachine": true,
+        "microwave": false
+      },
+      "amenities":  {
+        "essentialThings": true,
+        "internet": true,
+        "tv": false,
+        "heating": true,
+        "workplace": false
+      }
+  },{
+      "name": "3",
+      "guests": 3,
+      "photo": "/assets/img/3.png",
+      "adress": {
+        "city": "Київ",
+        "street": "Соборна",
+        "house": "2",
+        "apartment": "14"
+      },
+      "rentType": "Багатоповерхівка",
+      "placeType": "Приватний будинок",
+      "beds": 2,
+      "kitchenAppliances":  {
+        "plate": true,
+        "oven": false,
+        "dishwasher": false,
+        "washingMachine": false,
+        "microwave": false
+      },
+      "amenities":  {
+        "essentialThings": true,
+        "internet": false,
+        "tv": false,
+        "heating": false,
+        "workplace": false
+      }
+  },{
+      "name": "4",
+      "guests": 2,
+      "photo": "/assets/img/4.jpg",
+      "adress": {
+        "city": "Суми",
+        "street": "Шевченка",
+        "house": "2",
+        "apartment": "4"
+      },
+      "rentType": "Кімната",
+      "placeType": "Приватний будинок",
+      "beds": 2,
+      "kitchenAppliances":  {
+        "plate": true,
+        "oven": false,
+        "dishwasher": false,
+        "washingMachine": true,
+        "microwave": false
+      },
+      "amenities":  {
+        "essentialThings": false,
+        "internet": true,
+        "tv": false,
+        "heating": true,
+        "workplace": false
+      }
+  },{
+      "name": "5",
+      "guests": 3,
+      "photo": "/assets/img/5.jpg",
+      "adress": {
+        "city": "Київ",
+        "street": "Соборна",
+        "house": "2",
+        "apartment": "14"
+      },
+      "rentType": "Кімната",
+      "placeType": "Приватний будинок",
+      "beds": 2,
+      "kitchenAppliances":  {
+        "plate": true,
+        "oven": true,
+        "dishwasher": true,
+        "washingMachine": true,
+        "microwave": true
+      },
+      "amenities":  {
+        "essentialThings": true,
+        "internet": true,
+        "tv": true,
+        "heating": true,
+        "workplace": true
+      }
+  }
+]
+}

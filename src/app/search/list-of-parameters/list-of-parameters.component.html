@@ -1,0 +1,116 @@
+<div class="FiltersWrap">
+<div class="Filters">Фільтри: </div>
+<button type="submit" class="btn filtersBtn">Поиск</button>
+</div>
+<form class="formWrap" action="">
+  <label class="nameOfApartmentLabel" for="name">Назва</label><br>
+
+  <input class="nameOfApartment" [(ngModel)]="filters.name" type="text" id="name" >
+    <fieldset>
+      <legend>Тип помешкання:  </legend>
+      <section>
+        <input type="radio" name="placeType" id="house" value="1" >
+        <label for="house">Приватний будинок</label><br>
+        <input type="radio" name="placeType" id="flat" value="2" >
+        <label for="flat">Квартира</label>
+      </section>
+      <section> <p>Тип здачі:  </p>
+        <input type="radio" name="rentType" id="all" value="1" >
+        <label for="all">Все помешкання</label><br>
+        <input type="radio" name="rentType" id="room" value="2" >
+        <label for="room">Кімната</label><br>
+        <input type="radio" name="rentType" id="bed" value="3" >
+        <label for="bed">Ліжко-місце</label>
+      </section>
+  </fieldset>
+  <fieldset>
+    <legend>Зручності: </legend>
+      <section>
+        <input type="checkbox" name="amenities" id="internet" value="true" >
+        <label for="internet">Інтернет</label><br>
+        <input type="checkbox" name="amenities" id="tv" value="true" >
+        <label for="tv">Телевізор</label><br>
+        <input type="checkbox" name="amenities" id="heating" value="true" >
+        <label for="heating">Опалення</label><br>
+        <input type="checkbox" name="amenities" id="workplace" value="true" >
+        <label for="workplace">Стіл/робоче місце</label><br>
+        <input type="checkbox" name="amenities" id="fireplace" value="true" >
+        <label for="fireplace">Камін</label><br>
+        <input type="checkbox" name="amenities" id="balcony" value="true" >
+        <label for="balcony">Балкон/лоджія</label><br>
+      </section>
+      <section> <p>Cанвузол:  </p>
+        <input type="checkbox" name="bathroom" id="toilet" value="true" >
+        <label for="toilet">Туалет звичайний</label><br>
+        <input type="checkbox" name="bathroom" id="yardToilet" value="true" >
+        <label for="yardToilet">Туалет у дворі</label><br>
+        <input type="checkbox" name="bathroom" id="shower" value="true" >
+        <label for="shower">Ванна/душ</label><br>
+        <input type="checkbox" name="bathroom" id="jacuzzi" value="true" >
+        <label for="jacuzzi">Джакузі</label><br>
+        <input type="checkbox" name="bathroom" id="pool" value="true" >
+        <label for="pool">Бассейн</label><br>
+      </section>
+      <section> <p>Кухонна та побутова техніка:  </p>
+        <input type="checkbox" name="kitchenAppliances" id="plate" value="true" >
+        <label for="plate">Плита</label><br>
+        <input type="checkbox" name="kitchenAppliances" id="dishwasher" value="true" >
+        <label for="dishwasher">Посудомийна машина</label><br>
+        <input type="checkbox" name="kitchenAppliances" id="oven" value="true" >
+        <label for="oven">Духова шафа</label><br>
+        <input type="checkbox" name="kitchenAppliances" id="washingMachine" value="true" >
+        <label for="washingMachine">Пральна машина</label><br>
+        <input type="checkbox" name="kitchenAppliances" id="microwave" value="true" >
+        <label for="microwave">Мікрохвильова піч</label><br>
+        <input type="checkbox" name="kitchenAppliances" id="refrigerator" value="true" >
+        <label for="refrigerator">Холодильник</label><br>
+        <input type="checkbox" name="kitchenAppliances" id="clothesDryer" value="true" >
+        <label for="clothesDryer">Сушарка для одягу</label><br>
+        <input type="checkbox" name="kitchenAppliances" id="iron" value="true" >
+        <label for="iron">Праска</label><br>
+        <input type="checkbox" name="kitchenAppliances" id="vacuumCleaner" value="true" >
+        <label for="vacuumCleaner">Пилосос</label><br>
+        <input type="checkbox" name="kitchenAppliances" id="airConditioning" value="true" >
+        <label for="airConditioning">Кондеціонер</label><br>
+        <input type="checkbox" name="kitchenAppliances" id="hairDryer" value="true" >
+        <label for="hairDryer">Фен</label><br>
+      </section>
+  </fieldset>
+  <fieldset>
+      <legend>Обмеження:</legend>
+      <input type="checkbox" name="Limitation" id="forBoyOnly" value="true" >
+      <label for="forBoyOnly">Лише для чоловіків</label><br>
+      <input type="checkbox" name="Limitation" id="forGirlOnly" value="true" >
+      <label for="forGirlOnly">Лише для жінок</label><br>
+      <input type="checkbox" name="Limitation" id="forFamilyOnly" value="true" >
+      <label for="forFamilyOnly">Лише для сім'ї</label><br>
+      <input type="checkbox" name="Limitation" id="withoutChildren" value="true" >
+      <label for="withoutChildren">Без дітей</label><br>
+      <input type="checkbox" name="Limitation" id="notForStudents" value="true" >
+      <label for="notForStudents">Не студентам</label><br>
+      <input type="checkbox" name="Limitation" id="withoutPets" value="true" >
+      <label for="withoutPets">Без домашніх улюблеців</label><br>
+      <input type="checkbox" name="Limitation" id="notForSmokingPeople" value="true" >
+      <label for="notForSmokingPeople">Людям, які не палять</label><br>
+      <input type="checkbox" name="Limitation" id="notForForeigners" value="true" >
+      <label for="notForForeigners">Не іноземцям</label><br>
+  </fieldset>
+  <fieldset>
+      <legend>Безпека:</legend>
+        <input type="checkbox" name="amenities" id="essentialThings" value="true" >
+        <label for="essentialThings">Предмети першої необхідності</label><br>
+        <input type="checkbox" name="amenities" id="parkingPlace" value="true" >
+        <label for="parkingPlace">Парковка/гараж</label><br>
+        <input type="checkbox" name="amenities" id="smokeDetector" value="true" >
+        <label for="smokeDetector">Датчик диму</label><br>
+        <input type="checkbox" name="amenities" id="carbonMonoxideDetector" value="true" >
+        <label for="carbonMonoxideDetector">Датчик чадного газу</label><br>
+        <input type="checkbox" name="amenities" id="firstAidKit" value="true" >
+        <label for="firstAidKit">Аптечка першої допомоги</label><br>
+        <input type="checkbox" name="amenities" id="extinguisher" value="true" >
+        <label for="extinguisher">Вогнегасник</label><br>
+        <input type="checkbox" name="amenities" id="lockingDoors" value="true" >
+        <label for="lockingDoors">Двері в спальню запераються</label><br>
+  </fieldset>
+</form>
+

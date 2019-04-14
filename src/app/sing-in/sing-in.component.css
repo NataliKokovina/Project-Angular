@@ -1,0 +1,88 @@
+.backLoginForm{
+  background-image: url('/assets/img/kvartiry.jpg');
+  height: 90vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: flex-start;
+  flex-grow: center;
+  align-items: center;
+  justify-content: center;
+}
+.mask{
+  background-color: #ffffffb2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90vh;
+}
+
+.loginForm_wrap{
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+  width: 100%;
+  height: 60%;
+  color: #a2a2a2;
+
+}
+
+.loginForm{
+  background-color: #fff;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-flow: column;
+  width: 500px;
+  height: 450px;
+  border: 2px solid #a2a2a28e;
+  color: #a2a2a2;
+  margin: auto;
+}
+
+
+.fbbtn{
+  background-color: 	#3b5998;
+  color: #fff;
+}
+
+.gooogleBtn{
+  background-color: 	#d93025;
+  color: #fff;
+}
+
+.inputForm{
+  width: 70%;
+  height: 45px;
+  margin: 1% auto;
+  font-size: 1rem;
+}
+
+.line{
+  border-top: 1px solid #a2a2a2;
+  width: 70%;
+  margin: 15px auto;
+}
+
+.loginForm_submit{
+  background-color: #a2a2a2;
+  color: #fff;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+.singUp{
+  color: #a2a2a2;
+  text-decoration: none;
+  margin-top: 15px;
+  font-weight: 800;
+}
+
+.singUp:hover{
+  color: #17bed0;
+}
+
+.loginForm_submit:hover{
+  background-color: #17bed0;
+}
