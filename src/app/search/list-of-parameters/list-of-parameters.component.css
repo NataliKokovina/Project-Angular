@@ -1,0 +1,75 @@
+.FiltersWrap{
+  /* height: 100%; */
+  display: flex;
+}
+
+.filtersBtn{
+  width: 30%;
+  background-color: #17bed0;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.filtersBtn:hover{
+  background-color: #158692;
+}
+
+.Filters{
+  width: 70%;
+  max-height: 5%;
+  background-color: #17bed0;
+  color: #ffffff;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.formWrap{
+  max-height: 95%;
+  overflow: auto;
+  padding: 2% 3%;
+  color: #158692;
+  line-height: 25px;
+  background-color: #17bed03a;
+}
+
+.nameOfApartment{
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #17bed0; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #17bed03a;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #17bed0;
+}
+
+input{
+  margin-right: 7px;
+}
+
+section{
+  margin: 5px 7px;
+}
+
+p, legend, .nameOfApartmentLabel{
+  font-weight: 600;
+  color: #158692;
+}
+
+fieldset{
+  border: 1px solid #17bed0;
+}

@@ -12,8 +12,9 @@
           <input class="loginForm_input inputForm" [(ngModel)]="user.password" name="password" type="password" placeholder="Пароль" required />
           <button type="submit" class="btn loginForm_submit inputForm"> Вхід </button>
           <a class="singUp" routerLink="/sing-up" routerLinkActive="active"> Зареєструватися </a>
+          <img src="{{user?.img}}" alt="">
     </form>
-    <!-- {{ user | json}} -->
+    {{ user | json}}
 
   </div>
 </div>

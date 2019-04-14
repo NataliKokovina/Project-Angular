@@ -1,0 +1,14 @@
+.wraper{
+  display: flex;
+}
+
+app-list-of-parameters{
+  max-width: 20%;
+  height: 89.3vh;
+}
+
+app-list-of-apartments{
+  max-width: 20%;
+  /* background-color: #a2a2b5; */
+  height: 90vh;
+}

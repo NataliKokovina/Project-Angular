@@ -1,0 +1,47 @@
+.wrap{
+  background-color: #8ac1c742;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #a2a2a2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.imgApartment{
+  height: 150px;
+  width: 90%;
+}
+
+.listItem{
+  padding-inline-start: 0;
+  padding-top: 15px;
+}
+
+.list{
+  margin: 0 auto;
+}
+
+.searchList{
+  width: 100%;
+  max-height: 5%;
+  background-color: #9bd9e0;
+  color: #ffffff;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 15px;
+}
+

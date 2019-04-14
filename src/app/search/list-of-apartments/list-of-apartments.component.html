@@ -1,0 +1,12 @@
+<div class="searchList">Результати пошуку:</div>
+<div class="wrap">
+  <ul class="list">
+    <ol class="listItem" *ngFor="let apartment of apartments" >
+    <p>назва: {{apartment?.name}}</p>
+    <p>місто: {{apartment?.adress.city}}</p>
+    <img class="imgApartment" src="{{apartment?.photo}}" alt="фото квартири {{apartment?.id}}">
+    </ol>
+
+  </ul>
+</div>
+

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Search } from '../search';
+import { Router } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -61,9 +62,7 @@ export class FormComponent implements OnInit{
   }
 
   // @ViewChild('calendar') calendar: any;
-  constructor() {
-
-  }
+  constructor(private router: Router) {}
 
   onStart({start: startDate, last: lastDate}){
     this.search['dateStart'] = startDate;
@@ -83,8 +82,12 @@ export class FormComponent implements OnInit{
     // todo: передача city
   }
   public submited(){
-    // console.log(this.search ); this.city.value
+
     this.formSubmited = true;
+    this.router.navigate(['/search'])
+
+
+    // https://metanit.com/web/angular2/6.4.php
     // todo: прописать логику отправки данных
   }
   // initSearchForm() {

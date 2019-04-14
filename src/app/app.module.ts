@@ -16,6 +16,9 @@ import { FormsModule} from '@angular/forms';
 import { CalendarModule } from './home/form/calendar/calendar.module';
 import { SingUpModule } from './sing-up/sing-up.module';
 import { SingInModule } from './sing-in/sing-in.module';
+import { ListOfApartmentsComponent } from './search/list-of-apartments/list-of-apartments.component';
+import { ListOfParametersComponent } from './search/list-of-parameters/list-of-parameters.component';
+import { ApartamentInfComponent } from './search/apartament-inf/apartament-inf.component';
 
 
 
@@ -28,6 +31,9 @@ import { SingInModule } from './sing-in/sing-in.module';
     SingUpComponent,
     SearchComponent,
     HomeComponent,
+    ListOfApartmentsComponent,
+    ListOfParametersComponent,
+    ApartamentInfComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +48,6 @@ import { SingInModule } from './sing-in/sing-in.module';
     SingInModule
   ],
   providers: [HttpClientModule],
-  bootstrap: [AppComponent, HeaderComponent, RentMyApartmentComponent, HomeComponent]
+  bootstrap: [AppComponent, HeaderComponent, HomeComponent]
 })
 export class AppModule { }

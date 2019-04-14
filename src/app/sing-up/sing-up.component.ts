@@ -8,7 +8,7 @@ import {UserReg} from './sing-up';
 })
 export class SingUpComponent implements OnInit {
   public userReg: UserReg;
-  
+
   constructor() { }
 
   ngOnInit() {
@@ -16,6 +16,7 @@ export class SingUpComponent implements OnInit {
       name: "",
       email: "",
       password: "",
+      tel: +380,
     }
   }
 

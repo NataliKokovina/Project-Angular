@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from './sing-in';
+import {SingIn} from './sing-in';
 import {
   AuthService,
   FacebookLoginProvider,
@@ -13,7 +13,7 @@ import {
   styleUrls: ['./sing-in.component.css']
 })
 export class SingInComponent implements OnInit {
-  public user: User;
+  public user: SingIn;
 
   constructor(private socialAuthService: AuthService) { }
 
@@ -24,16 +24,13 @@ export class SingInComponent implements OnInit {
     }else if(socialPlatform == "google"){
       socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
     }
-    // else if (socialPlatform == "linkedin") {
-    //   socialPlatformProvider = LinkedinLoginProvider.PROVIDER_ID;
-    // }
 
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
         console.log(socialPlatform+" sign in data : " , userData);
         // Now sign-in with userData
-        // ...
-
+        this.user.img = userData.image;
+        this.user.email=userData.email;
       }
     );
   }
@@ -42,6 +39,7 @@ export class SingInComponent implements OnInit {
     this.user = {
       email: "",
       password: "",
+      img: "",
     };
 
   }
