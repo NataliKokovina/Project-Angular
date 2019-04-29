@@ -1,0 +1,6 @@
+app-header{
+  max-height: 10hv;
+}
+router-outlet{
+  max-width: 90hv;
+}

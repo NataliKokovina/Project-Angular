@@ -16,7 +16,12 @@ export class ListOfApartmentsComponent implements OnInit {
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
-    this.httpService.getApartment().subscribe(data => this.apartments=data["apartmentList"]);
+    // this.httpService.getApartment().subscribe(data => this.apartments=data["apartmentList"]);
+    this.getApartment();
   }
 
+  getApartment(): void {
+    this.httpService.getApartment()
+    .subscribe(apartments => this.apartments = apartments["apartmentList"].slice(0,5));
+  }
 }

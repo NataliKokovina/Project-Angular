@@ -1,0 +1,16 @@
+<h2>My Apartament</h2>
+<ul class="apartaments">
+  <li *ngFor="let apartament of apartaments">
+    <a routerLink="/detail/{{apartament.id}}">
+      <span class="badge">{{apartament.id}}</span> {{apartament.name}}
+    </a>
+  </li>
+</ul>
+
+<ul class="apartaments">
+  <li *ngFor="let apartament of apartaments"
+    [class.selected]="apartament === selectedApartament"
+    (click)="onSelect(apartament)">
+    <span class="badge">{{apartament.id}}</span> {{apartament.name}}
+  </li>
+</ul>

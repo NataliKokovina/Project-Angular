@@ -29,11 +29,12 @@
 .listItem{
   padding-inline-start: 0;
   padding-top: 15px;
-}
-
-.list{
   margin: 0 auto;
 }
+
+/* .list{
+  margin: 0 auto;
+} */
 
 .searchList{
   width: 100%;

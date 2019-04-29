@@ -3,17 +3,20 @@
   <div class="loginForm " >
       <button class="btn fbbtn inputForm" (click)="socialSignIn('facebook')">Sign in with Facebook</button>
       <button class="btn gooogleBtn inputForm" (click)="socialSignIn('google')">Sign in with Google</button>
-    <form class="loginForm_wrap" (ngSubmit)="submited()">
+      <p class="singUp" (click)="singUpClick()" [class.visible]="!singUp"> Зареєструватися </p>
+      <!-- routerLink="/sing-up" routerLinkActive="active" -->
+      <!-- <img src="{{user?.img}}" alt=""> -->
       <div class="line"></div>
+      <app-sing-up class="singUpAll" [class.visible]="singUp"></app-sing-up>
+    <form class="loginForm_wrap" (ngSubmit)="submited()">
         <!-- <label for="email">Електронна пошта</label> -->
           <input class="loginForm_input inputForm" [(ngModel)]="user.email" name="email" id="email" type="text" #email="ngModel" placeholder="Електронна пошта" required/>
           <div class="invalidForm"[hidden]="email.valid || email.untouched"><p> Не корректний e-mail</p></div>
           <!-- <label for="password" >Пароль</label> -->
           <input class="loginForm_input inputForm" [(ngModel)]="user.password" name="password" type="password" placeholder="Пароль" required />
           <button type="submit" class="btn loginForm_submit inputForm"> Вхід </button>
-          <a class="singUp" routerLink="/sing-up" routerLinkActive="active"> Зареєструватися </a>
-          <img src="{{user?.img}}" alt="">
     </form>
+
     {{ user | json}}
 
   </div>

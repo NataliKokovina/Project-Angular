@@ -19,6 +19,7 @@ import { SingInModule } from './sing-in/sing-in.module';
 import { ListOfApartmentsComponent } from './search/list-of-apartments/list-of-apartments.component';
 import { ListOfParametersComponent } from './search/list-of-parameters/list-of-parameters.component';
 import { ApartamentInfComponent } from './search/apartament-inf/apartament-inf.component';
+import { ApartmentsComponent } from './apartments/apartments.component';
 
 
 
@@ -33,7 +34,8 @@ import { ApartamentInfComponent } from './search/apartament-inf/apartament-inf.c
     HomeComponent,
     ListOfApartmentsComponent,
     ListOfParametersComponent,
-    ApartamentInfComponent
+    ApartamentInfComponent,
+    ApartmentsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,21 @@
 <div class="searchList">Результати пошуку:</div>
 <div class="wrap">
-  <ul class="list">
+    <a class="listItem" *ngFor="let apartment of apartments"
+    routerLink="/detail/{{apartment.id}}">
+  <div>
+    <!-- <h4>{{apartment.name}}</h4> -->
+    <p>назва: {{apartment?.name}}</p>
+    <p>місто: {{apartment?.adress.city}}</p>
+    <img class="imgApartment" src="{{apartment?.photo}}" alt="фото квартири {{apartment?.id}}">
+  </div>
+</a>
+  <!-- <ul class="list">
     <ol class="listItem" *ngFor="let apartment of apartments" >
     <p>назва: {{apartment?.name}}</p>
     <p>місто: {{apartment?.adress.city}}</p>
     <img class="imgApartment" src="{{apartment?.photo}}" alt="фото квартири {{apartment?.id}}">
     </ol>
 
-  </ul>
+  </ul> -->
 </div>
 

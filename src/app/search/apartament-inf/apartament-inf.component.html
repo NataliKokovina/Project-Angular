@@ -1,3 +1,20 @@
-<p>
-  apartament-inf works!
-</p>
+    <!-- <h1>назва: {{apartment?.name}}</h1>
+    <p>місто: {{apartment?.adress.city}}</p>
+    <img class="imgApartment" src="{{apartment?.photo}}" alt="фото квартири {{apartment?.id}}"> -->
+    <ul>
+    <li *ngFor="let apartment of apartments">
+        <a routerLink="/detail/{{apartment.id}}">
+          <span >{{apartment.id}}</span> {{apartment.name}}
+        </a>
+      </li>
+    </ul>
+    <div *ngIf="apartment">
+      <h2>{{apartment.name | uppercase}} Details</h2>
+      <div><span>id: </span>{{apartment.id}}</div>
+      <div>
+        <label>name:
+          <input [(ngModel)]="apartment.name" placeholder="name"/>
+        </label>
+      </div>
+      <button (click)="goBack()">go back</button>
+    </div>
