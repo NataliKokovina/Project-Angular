@@ -17,18 +17,19 @@
 }
 
 .loginForm_wrap{
-  display: flex;
+  /* display: flex; */
   align-items: center;
   flex-flow: column;
   justify-content: flex-start;
   width: 100%;
   height: 60%;
   color: #a2a2a2;
-
+  display: none;
 }
 
 .singUpAll{
   display: none;
+  width: 100%;
 }
 
 .loginForm{
@@ -41,11 +42,10 @@
   border: 2px solid #a2a2a28e;
   color: #a2a2a2;
   margin: 15px auto;
+
 }
 
-.visible{
-  display: flex;
-}
+
 
 .fbbtn{
   background-color: 	#3b5998;
@@ -82,6 +82,7 @@
   text-decoration: none;
   font-weight: 800;
   margin: 10px auto;
+  display: none;
 }
 
 .singUp:hover{
@@ -90,4 +91,16 @@
 
 .loginForm_submit:hover{
   background-color: #17bed0;
+}
+
+.singIn{
+  color: #a2a2a2;
+  text-decoration: none;
+  font-weight: 800;
+  margin: 10px auto;
+  display: none;
+}
+
+.visible{
+  display: flex;
 }

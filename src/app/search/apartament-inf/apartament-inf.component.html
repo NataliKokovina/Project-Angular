@@ -1,20 +1,107 @@
     <!-- <h1>назва: {{apartment?.name}}</h1>
     <p>місто: {{apartment?.adress.city}}</p>
-    <img class="imgApartment" src="{{apartment?.photo}}" alt="фото квартири {{apartment?.id}}"> -->
-    <ul>
+
+     <ul>
     <li *ngFor="let apartment of apartments">
         <a routerLink="/detail/{{apartment.id}}">
           <span >{{apartment.id}}</span> {{apartment.name}}
         </a>
       </li>
-    </ul>
+    </ul> -->
     <div *ngIf="apartment">
-      <h2>{{apartment.name | uppercase}} Details</h2>
-      <div><span>id: </span>{{apartment.id}}</div>
-      <div>
-        <label>name:
-          <input [(ngModel)]="apartment.name" placeholder="name"/>
-        </label>
+      <h2>Деталі про помешкання: {{apartment.name}} </h2>
+      <div class="imgWrap">
+          <button class="btn carousel start" (click)="imgApartmentBefore()"><</button>
+          <button class="btn carousel end" (click)="imgApartmentAfter()">></button>
+          <img [class.imgMin]="imgApart===2 || imgApart===3 ||  imgApart===4" src="{{apartment.photo}}" [class.imgApartment]="imgApart===1" (click)="imgApartment(1)"  alt="фото квартири {{apartment.id}}">
+          <img [class.imgApartment]="imgApart===2" class="imgMin" [class.imgMin]="imgApart!=2" src="{{apartment?.photo2}}" alt="фото квартири {{apartment?.id}}">
+          <img [class.imgApartment]="imgApart===3" class="imgMin" [class.imgMin]="imgApart!=3" src="{{apartment?.photo3}}" alt="фото квартири {{apartment?.id}}">
+          <img [class.imgApartment]="imgApart===4" class="imgMin" [class.imgMin]="imgApart!=4" src="{{apartment?.photo4}}" alt="фото квартири {{apartment?.id}}">
       </div>
+      <p>Адреса: {{apartment.adress.city}}, {{apartment.adress.street}}, {{apartment.adress.house}}</p>
+      <section>
+          <h3>Про житло:</h3>
+          <table> Кухонна та побутова техніка
+              <tr>
+                  <td>Плита</td>
+                  <td>{{apartment.kitchenAppliances.plate}}</td>
+              </tr>
+              <tr>
+                  <td>Духова шафа</td>
+                  <td>{{apartment.kitchenAppliances.oven}}</td>
+              </tr>
+              <tr>
+                  <td>Посудомийна машина</td>
+                  <td>{{apartment.kitchenAppliances.dishwasher}}</td>
+              </tr>
+              <tr>
+                  <td>Мікрохвильова піч</td>
+                  <td>{{apartment.kitchenAppliances.microwave}}</td>
+              </tr>
+              <tr>
+                  <td>Пральна машина</td>
+                  <td>{{apartment.kitchenAppliances.washingMachine}}</td>
+              </tr>
+          </table>
+          <table> Зручності в помешканні
+              <tr>
+                  <td>Предмети першої необхідності</td>
+                  <td>{{apartment.amenities.essentialThings}}</td>
+              </tr>
+              <tr>
+                  <td>Безкоштовний інтернет</td>
+                  <td>{{apartment.amenities.internet}}</td>
+              </tr>
+              <tr>
+                  <td>Телевізор</td>
+                  <td>{{apartment.amenities.tv}}</td>
+              </tr>
+              <tr>
+                  <td>Опалення</td>
+                  <td>{{apartment.amenities.heating}}</td>
+              </tr>
+              <tr>
+                  <td>Стіл/робоче місце</td>
+                  <td>{{apartment.amenities.workplace}}</td>
+              </tr>
+            </table>
+      </section>
+      <div>
+        <h3></h3>
+        <p>{{apartment.about}}</p>
+      </div>
+
       <button (click)="goBack()">go back</button>
+      <button>Номер телефона для бронювання</button>
+      <div> {{apartment.phoneNumber}} </div>
     </div>
+
+<!--
+
+      "id": 1,
+      "name": "1",
+      "guests": 5,
+      "photo": "/assets/img/1.jpg",
+      "adress": {
+        "city": "Київ",
+        "street": "Шевченка",
+        "house": 2,
+        "apartment": 14
+      },
+      "rentType": "Все помешкання",
+      "placeType": "Приватний будинок",
+      "beds": 2,
+      "kitchenAppliances":  {
+        "plate": true,
+        "oven": true,
+        "dishwasher": false,
+        "washingMachine": true,
+        "microwave": false
+      },
+      "amenities":  {
+        "essentialThings": true,
+        "internet": true,
+        "tv": false,
+        "heating": true,
+        "workplace": false
+      } -->

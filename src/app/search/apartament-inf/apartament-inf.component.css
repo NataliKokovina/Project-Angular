@@ -1,0 +1,40 @@
+.imgMin{
+  width: 0;
+  /* height: 10%; */
+  /* float: inline-end; */
+}
+
+.imgApartment{
+  width: 100%;
+  /* float: inline-start; */
+}
+
+.imgWrap{
+  position: relative;
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.carousel{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  height: 100%;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  color: #ffffff;
+  font-size: 50px;
+}
+
+.start:hover{
+  color: #2f2f2f;
+}
+
+.end:hover{
+  color: #2f2f2f;
+}
+
+.end{
+  right: 0;
+}

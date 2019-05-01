@@ -46,3 +46,15 @@
   font-size: 15px;
 }
 
+
+.searchListWrap{
+  width: 30%;
+}
+
+.selectedApartament{
+  width: 70%;
+}
+
+.wrapForAll{
+  display: flex;
+}

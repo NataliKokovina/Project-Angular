@@ -1,14 +1,63 @@
-<div class="searchList">Результати пошуку:</div>
-<div class="wrap">
-    <a class="listItem" *ngFor="let apartment of apartments"
+
+<div class="wrapForAll">
+<div class="searchListWrap">
+  <div class="searchList">Результати пошуку:</div>
+  <div class="wrap">
+  <ul class="listItem" class="heroes">
+    <li *ngFor="let apartment of apartments"
+      [class.selected]="apartment === selectedApartament"
+      (click)="onSelect(apartment)">
+      <p>назва: {{apartment?.name}}</p>
+      <p>місто: {{apartment?.adress.city}}</p>
+      <img class="imgApartment" src="{{apartment?.photo}}" alt="фото квартири {{apartment?.id}}">
+      <a class="btn-sale" routerLink="/detail/{{apartment.id}}">Бронювати</a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+
+<div class="selectedApartament" *ngIf="selectedApartament">
+    <h2>Деталі про помешкання: {{selectedApartament.name}} </h2>
+    <div>
+        <img src="{{selectedApartament?.photo}}" alt="фото квартири {{selectedApartament?.id}}">
+    </div>
+    <p>Адреса: {{selectedApartament.adress.city}}, {{selectedApartament.adress.street}}, {{selectedApartament.adress.house}}</p>
+    <h3>Про житло:</h3>
+    <table>
+        <tr>
+            <th>Кухонне обладнення</th>
+            <th>Наявність</th>
+        </tr>
+        <tr>
+            <td>Плита</td>
+            <td>{{selectedApartament.kitchenAppliances.plate}}</td>
+        </tr>
+        <tr>
+            <td>Духова шафа</td>
+            <td>{{selectedApartament.kitchenAppliances.oven}}</td>
+        </tr>
+        <tr>
+            <td>Духова шафа</td>
+            <td>{{selectedApartament.kitchenAppliances.dishwasher}}</td>
+        </tr>
+
+    </table>
+</div>
+
+
+
+
+
+    <!-- <a class="listItem" *ngFor="let apartment of apartments"
     routerLink="/detail/{{apartment.id}}">
   <div>
-    <!-- <h4>{{apartment.name}}</h4> -->
-    <p>назва: {{apartment?.name}}</p>
+       <p>назва: {{apartment?.name}}</p>
     <p>місто: {{apartment?.adress.city}}</p>
     <img class="imgApartment" src="{{apartment?.photo}}" alt="фото квартири {{apartment?.id}}">
   </div>
-</a>
+</a> -->
+
   <!-- <ul class="list">
     <ol class="listItem" *ngFor="let apartment of apartments" >
     <p>назва: {{apartment?.name}}</p>
@@ -17,5 +66,8 @@
     </ol>
 
   </ul> -->
-</div>
 
+
+
+
+<!-- <h2>My Heroes</h2> -->

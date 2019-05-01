@@ -11,7 +11,9 @@ import { Apartments } from '../list-of-apartments/apartments'
   providers: [HttpService]
 })
 export class ApartamentInfComponent implements OnInit {
-  apartament: Apartments[] =[];
+  apartment: Apartments;
+  imgApart: number = 1;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -19,15 +21,40 @@ export class ApartamentInfComponent implements OnInit {
     private location: Location) { }
 
   ngOnInit(){
-    // this.getApart();
+    this.getApart();
   }
 
-  // getApart(): void{
-  //   const id = +this.route.snapshot.paramMap.get('id');
-  //   this.httpService.getApart(id).subscribe(apartament => this.apartament = apartament);
-  // }
+  getApart(): void{
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.httpService.getApart(id).subscribe(apartment => this.apartment = apartment);
+  }
 
   goBack(): void {
     this.location.back();
+  }
+
+  // imgApartment(photo: string): void{
+  //   this.imgApart = photo;
+  //   console.log(photo);
+  // }
+
+  imgApartmentAfter() {
+    if(this.imgApart<4){
+      this.imgApart++
+    } else{
+      this.imgApart = 1;
+    }
+    console.log(this.imgApart);
+    return this.imgApart;
+  }
+
+  imgApartmentBefore(){
+    if(this.imgApart>1){
+      this.imgApart--
+    } else{
+      this.imgApart = 4;
+    }
+    console.log(this.imgApart);
+    return this.imgApart;
   }
 }

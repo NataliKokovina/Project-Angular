@@ -44,7 +44,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  /* background: #17bed0; */
+  background: transparent;
 }
 
 /* Handle */

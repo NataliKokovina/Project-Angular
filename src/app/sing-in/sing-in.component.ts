@@ -17,9 +17,9 @@ export class SingInComponent implements OnInit {
   public user: SingIn;
 
   singUpClick(){
-    this.singUp = true
+    this.singUp = !this.singUp;
    }
-   
+
   constructor(private socialAuthService: AuthService) { }
 
   public socialSignIn(socialPlatform : string) {

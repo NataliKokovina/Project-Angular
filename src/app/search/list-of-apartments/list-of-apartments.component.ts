@@ -12,16 +12,28 @@ import {Apartments} from './apartments';
 export class ListOfApartmentsComponent implements OnInit {
 
   apartments: Apartments[]=[];
+  selectedApartament: Apartments;
+  hasApp: boolean = false;
 
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
     // this.httpService.getApartment().subscribe(data => this.apartments=data["apartmentList"]);
-    this.getApartment();
+    // this.getApartment();
+      this.getApartments();
   }
 
-  getApartment(): void {
-    this.httpService.getApartment()
-    .subscribe(apartments => this.apartments = apartments["apartmentList"].slice(0,5));
+  getApartments(): void {
+    this.httpService.getApartments().subscribe(apartments => this.apartments = apartments.slice(0, 5));
   }
+
+  onSelect(apartment: Apartments): void {
+    this.selectedApartament = apartment;
+  }
+
+
+  // getApartment(): void {
+  //   this.httpService.getApartment()
+  //   .subscribe(apartments => this.apartments = apartments["apartmentList"].slice(0,5));
+  // }
 }

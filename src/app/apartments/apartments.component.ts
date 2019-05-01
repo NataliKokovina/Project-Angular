@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Apartments } from '../search/list-of-apartments/apartments';
 import { HttpService} from '../search/http.service';
+import { APARTMENTS} from './apartments-mock';
+
 
 @Component({
   selector: 'app-apartments',
@@ -10,15 +12,18 @@ import { HttpService} from '../search/http.service';
 export class ApartmentsComponent implements OnInit {
 
   selectedApartament: Apartments;
-  apartaments: Apartments[];
+  apartaments: Apartments [];
+  // apartaments = APARTMENTS;
 
   constructor(private httpServise: HttpService) { }
 
   ngOnInit() {
-
+    this.getApartments();
   }
 
-  onSelect(apartament: Apartments): void {
-    this.selectedApartament = apartament;
+  getApartments(): void {
+    this.httpServise.getApartments().subscribe(apartaments => this.apartaments = apartaments);
   }
+
+
 }
