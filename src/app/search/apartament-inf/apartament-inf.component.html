@@ -1,15 +1,11 @@
-    <!-- <h1>назва: {{apartment?.name}}</h1>
-    <p>місто: {{apartment?.adress.city}}</p>
+    <div class="wrap" *ngIf="apartment">
+      <div  class="wrapForNameAndPrice">
+          <h2  class="Apart_nameOfApart">{{apartment.name}} </h2>
+          <div class="priceHolder"> 1 ніч <span class="price">{{apartment.price}}</span> грн </div>
+      </div>
+      <p class="Apart_address">{{apartment.adress.city}}, {{apartment.adress.street}}, {{apartment.adress.house}}</p>
 
-     <ul>
-    <li *ngFor="let apartment of apartments">
-        <a routerLink="/detail/{{apartment.id}}">
-          <span >{{apartment.id}}</span> {{apartment.name}}
-        </a>
-      </li>
-    </ul> -->
-    <div *ngIf="apartment">
-      <h2>Деталі про помешкання: {{apartment.name}} </h2>
+      <div class="Apart_wrap">
       <div class="imgWrap">
           <button class="btn carousel start" (click)="imgApartmentBefore()"><</button>
           <button class="btn carousel end" (click)="imgApartmentAfter()">></button>
@@ -18,90 +14,89 @@
           <img [class.imgApartment]="imgApart===3" class="imgMin" [class.imgMin]="imgApart!=3" src="{{apartment?.photo3}}" alt="фото квартири {{apartment?.id}}">
           <img [class.imgApartment]="imgApart===4" class="imgMin" [class.imgMin]="imgApart!=4" src="{{apartment?.photo4}}" alt="фото квартири {{apartment?.id}}">
       </div>
-      <p>Адреса: {{apartment.adress.city}}, {{apartment.adress.street}}, {{apartment.adress.house}}</p>
-      <section>
-          <h3>Про житло:</h3>
-          <table> Кухонна та побутова техніка
-              <tr>
-                  <td>Плита</td>
-                  <td>{{apartment.kitchenAppliances.plate}}</td>
-              </tr>
-              <tr>
-                  <td>Духова шафа</td>
-                  <td>{{apartment.kitchenAppliances.oven}}</td>
-              </tr>
-              <tr>
-                  <td>Посудомийна машина</td>
-                  <td>{{apartment.kitchenAppliances.dishwasher}}</td>
-              </tr>
-              <tr>
-                  <td>Мікрохвильова піч</td>
-                  <td>{{apartment.kitchenAppliances.microwave}}</td>
-              </tr>
-              <tr>
-                  <td>Пральна машина</td>
-                  <td>{{apartment.kitchenAppliances.washingMachine}}</td>
-              </tr>
-          </table>
-          <table> Зручності в помешканні
-              <tr>
-                  <td>Предмети першої необхідності</td>
-                  <td>{{apartment.amenities.essentialThings}}</td>
-              </tr>
-              <tr>
-                  <td>Безкоштовний інтернет</td>
-                  <td>{{apartment.amenities.internet}}</td>
-              </tr>
-              <tr>
-                  <td>Телевізор</td>
-                  <td>{{apartment.amenities.tv}}</td>
-              </tr>
-              <tr>
-                  <td>Опалення</td>
-                  <td>{{apartment.amenities.heating}}</td>
-              </tr>
-              <tr>
-                  <td>Стіл/робоче місце</td>
-                  <td>{{apartment.amenities.workplace}}</td>
-              </tr>
-            </table>
-      </section>
-      <div>
-        <h3></h3>
-        <p>{{apartment.about}}</p>
-      </div>
+      <section class="Apart_aboutWrap">
+          <button class="btn showPhoneNumber" [class.closed]="phoneNumberShow" (click)="phoneNumber()">Подивитися телефон для бронювання</button>
+          <div class="showedPhoneNumber" [class.showed]="phoneNumberShow"> Номер телефона для бронювання: <br> <span class="phoneNumber">{{apartment.phoneNumber}}</span>  </div>
+        <div class="Apart_about">
+            <div class="Apart_ItemsWrap">
+                <p class="header_inf">{{apartment.rentType}} </p>
+                <p class="header_inf">{{apartment.placeType}} </p>
+                <h4 class="header_inf">Зручності в помешканні</h4>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesEssentialThings">Предмети першої необхідності</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesInternet">Безкоштовний інтернет</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesTv">Телевізор</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesHeating">Опалення</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesWorkplace">Стіл/робоче місце</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="fireplace">Камін</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="balcony">Балкон/лоджія</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="parkingPlace">Парковка/гараж</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="smokeDetector">Датчик диму</p>
+            </div>
+            <div class="Apart_ItemsWrap">
+                <h4 class="header_inf">Обмеження</h4>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="forBoyOnly">Лише для чоловіків </p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="forGirlOnly">Лише для жінок</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="forFamilyOnly">Лише для сім'ї</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="withoutChildren">Без дітей</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="notForStudents">Без домашніх улюбленців</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="withoutPets">Духова шафа</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="notForSmokingPeople">Паління заборонено</p>
+                <p class="Apart_about-kitchenAppliances-amenities" *ngIf="notForForeigners">Не для іноземців</p>
+            </div>
+        </div>
+    </section>
+    </div>
+    <div class="wrap_inf">
+        <h3 class="Apart_about-header">Про житло:</h3>
+        <div class="Apart_inf">
+          <h3 class="header_inf">Опис:</h3>
+          <p class="Apart_inf-about">{{apartment.about}}</p>
+        </div>
 
-      <button (click)="goBack()">go back</button>
-      <button>Номер телефона для бронювання</button>
-      <div> {{apartment.phoneNumber}} </div>
+        <section class="service">
+        <div class="Apart_ItemsWrap">
+            <h4 class="header_inf">Зручності в помешканні</h4>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesEssentialThings">Предмети першої необхідності</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesInternet">Безкоштовний інтернет</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesTv">Телевізор</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesHeating">Опалення</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesWorkplace">Стіл/робоче місце</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="fireplace">Камін</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="balcony">Балкон/лоджія</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="parkingPlace">Парковка/гараж</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="smokeDetector">Датчик диму</p>
+        </div>
+        <div class="Apart_ItemsWrap">
+            <h4 class="header_inf">Кухонна та побутова техніка</h4>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="kitchenPlate">Плита</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="kitchenOven">Духова шафа</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="kitchenDishwasher">Посудомийна машина</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="kitchenMicrowave">Мікрохвильова піч</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="kitchenWashingMachine">Пральна машина</p>
+        </div>
+        <div class="Apart_ItemsWrap">
+            <h4 class="header_inf">Обмеження</h4>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="forBoyOnly">Лише для чоловіків </p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="forGirlOnly">Лише для жінок</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="forFamilyOnly">Лише для сім'ї</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="withoutChildren">Без дітей</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="notForStudents">Без домашніх улюбленців</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="withoutPets">Духова шафа</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="notForSmokingPeople">Паління заборонено</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="notForForeigners">Не для іноземців</p>
+        </div>
+        <div class="Apart_ItemsWrap">
+            <h4 class="header_inf">Санвузол</h4>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="toilet">Туалет</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="yardToilet">Туалет у дворі</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="shower">Ванна/душ</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="jacuzzi">Джакузі</p>
+            <p class="Apart_about-kitchenAppliances-amenities" *ngIf="pool">Бассейн</p>
+        </div>
+      </section>
     </div>
 
-<!--
+      <button class="btn" (click)="goBack()">go back</button>
+    </div>
 
-      "id": 1,
-      "name": "1",
-      "guests": 5,
-      "photo": "/assets/img/1.jpg",
-      "adress": {
-        "city": "Київ",
-        "street": "Шевченка",
-        "house": 2,
-        "apartment": 14
-      },
-      "rentType": "Все помешкання",
-      "placeType": "Приватний будинок",
-      "beds": 2,
-      "kitchenAppliances":  {
-        "plate": true,
-        "oven": true,
-        "dishwasher": false,
-        "washingMachine": true,
-        "microwave": false
-      },
-      "amenities":  {
-        "essentialThings": true,
-        "internet": true,
-        "tv": false,
-        "heating": true,
-        "workplace": false
-      } -->
+

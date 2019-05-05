@@ -9,7 +9,7 @@
       (click)="onSelect(apartment)">
       <p>назва: {{apartment?.name}}</p>
       <p>місто: {{apartment?.adress.city}}</p>
-      <img class="imgApartment" src="{{apartment?.photo}}" alt="фото квартири {{apartment?.id}}">
+      <img class="imgApart" src="{{apartment?.photo}}" alt="фото квартири {{apartment?.id}}">
       <a class="btn-sale" routerLink="/detail/{{apartment.id}}">Бронювати</a>
     </li>
   </ul>
@@ -17,33 +17,55 @@
 </div>
 
 
-<div class="selectedApartament" *ngIf="selectedApartament">
-    <h2>Деталі про помешкання: {{selectedApartament.name}} </h2>
-    <div>
-        <img src="{{selectedApartament?.photo}}" alt="фото квартири {{selectedApartament?.id}}">
-    </div>
-    <p>Адреса: {{selectedApartament.adress.city}}, {{selectedApartament.adress.street}}, {{selectedApartament.adress.house}}</p>
-    <h3>Про житло:</h3>
-    <table>
-        <tr>
-            <th>Кухонне обладнення</th>
-            <th>Наявність</th>
-        </tr>
-        <tr>
-            <td>Плита</td>
-            <td>{{selectedApartament.kitchenAppliances.plate}}</td>
-        </tr>
-        <tr>
-            <td>Духова шафа</td>
-            <td>{{selectedApartament.kitchenAppliances.oven}}</td>
-        </tr>
-        <tr>
-            <td>Духова шафа</td>
-            <td>{{selectedApartament.kitchenAppliances.dishwasher}}</td>
-        </tr>
+<!-- <div class="selectedApartament" *ngIf="selectedApartament">
+        <h2  class="Apart_nameOfApart">{{selectedApartament.name}} </h2>
+    <p class="Apart_address">{{selectedApartament.adress.city}}, {{selectedApartament.adress.street}}, {{selectedApartament.adress.house}}</p>
 
-    </table>
-</div>
+    <div class="Apart_wrap">
+    <div class="imgWrap">
+        <button class="btn carousel start" (click)="imgApartmentBefore()"><</button>
+        <button class="btn carousel end" (click)="imgApartmentAfter()">></button>
+        <img [class.imgMin]="imgApart===2 || imgApart===3 ||  imgApart===4" src="{{selectedApartament.photo}}" [class.imgApartment]="imgApart===1" (click)="imgApartment(1)"  alt="фото квартири {{selectedApartament.id}}">
+        <img [class.imgApartment]="imgApart===2" class="imgMin" [class.imgMin]="imgApart!=2" src="{{selectedApartament?.photo2}}" alt="фото квартири {{selectedApartament?.id}}">
+        <img [class.imgApartment]="imgApart===3" class="imgMin" [class.imgMin]="imgApart!=3" src="{{selectedApartament?.photo3}}" alt="фото квартири {{selectedApartament?.id}}">
+        <img [class.imgApartment]="imgApart===4" class="imgMin" [class.imgMin]="imgApart!=4" src="{{selectedApartament?.photo4}}" alt="фото квартири {{selectedApartament?.id}}">
+    </div>
+    <section class="Apart_aboutWrap">
+      <div class="Apart_about">
+          <div class="Apart_ItemsWrap">
+              <p class="header_inf">{{selectedApartament.rentType}} </p>
+              <p class="header_inf">{{selectedApartament.placeType}} </p>
+              <h4 class="header_inf">Зручності в помешканні</h4>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesEssentialThings">Предмети першої необхідності</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesInternet">Безкоштовний інтернет</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesTv">Телевізор</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesHeating">Опалення</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="amenitiesWorkplace">Стіл/робоче місце</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="fireplace">Камін</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="balcony">Балкон/лоджія</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="parkingPlace">Парковка/гараж</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="smokeDetector">Датчик диму</p>
+          </div>
+          <div class="Apart_ItemsWrap">
+              <h4 class="header_inf">Обмеження</h4>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="forBoyOnly">Лише для чоловіків </p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="forGirlOnly">Лише для жінок</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="forFamilyOnly">Лише для сім'ї</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="withoutChildren">Без дітей</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="notForStudents">Без домашніх улюбленців</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="withoutPets">Духова шафа</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="notForSmokingPeople">Паління заборонено</p>
+              <p class="Apart_about-kitchenAppliances-amenities" *ngIf="notForForeigners">Не для іноземців</p>
+          </div>
+      </div>
+  </section>
+  </div>
+  <div class="wrap_inf">
+      <h3 class="Apart_about-header">Про житло:</h3>
+      <div class="Apart_inf">
+        <h3 class="header_inf">Опис:</h3>
+        <p class="Apart_inf-about">{{selectedApartament.about}}</p>
+      </div> -->
 
 
 

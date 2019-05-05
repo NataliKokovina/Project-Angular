@@ -29,8 +29,30 @@ export class Apartments{
     tv: boolean;
     heating: boolean;
     workplace: boolean;
+    fireplace: boolean;
+    balcony: boolean;
+    parkingPlace: boolean;
+    smokeDetector: boolean;
+  };
+  limitation:  {
+    forBoyOnly: boolean;
+    forGirlOnly: boolean;
+    forFamilyOnly: boolean;
+    withoutChildren: boolean;
+    notForStudents: boolean;
+    withoutPets: boolean;
+    notForSmokingPeople: boolean;
+    notForForeigners: boolean;
+  };
+  bath: {
+    toilet: boolean;
+    yardToilet: boolean;
+    shower: boolean;
+    jacuzzi: boolean;
+    pool: boolean;
   };
   about: string;
+  price: number;
   phoneNumber: string;
 }
 

@@ -21,7 +21,7 @@
   background: #555;
 }
 
-.imgApartment{
+.imgApart{
   height: 150px;
   width: 90%;
 }
@@ -58,3 +58,111 @@
 .wrapForAll{
   display: flex;
 }
+
+
+.imgMin{
+  width: 0;
+  height: 0;
+}
+
+.imgApartment{
+  width: 820px;
+  height: 520px;
+}
+
+.imgWrap{
+  position: relative;
+}
+
+.carousel{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  height: 520px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  color: #ffffff;
+  font-size: 50px;
+}
+
+.start:hover{
+  color: #05727e;
+}
+
+.end:hover{
+  color: #05727e;
+}
+
+.end{
+  right: 0;
+}
+
+.Apart_header{
+  margin-top: 1.5%;
+  margin-bottom: 1%;
+  color: #a2a2a2;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.Apart_nameOfApart{
+  margin-top: 1.5%;
+  margin-bottom: 1%;
+  color: #17bed0;
+  font-size: 25px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.Apart_address{
+  color: #a2a2a2;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.Apart_about{
+  background-color: #f2f2f2;
+  width: 380px;
+  height: 450px;
+  overflow-x: hidden;
+}
+
+.Apart_about-header{
+  color: #05727e;
+  font-size: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.Apart_about-kitchenAppliances-amenities{
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-left: 6px;
+}
+
+
+.Apart_wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Apart_inf{
+  background-color: #f2f2f2;
+  color: #a2a2a2;
+  font-size: 14px;
+}
+
+.header_inf{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  }
+
+  .Apart_ItemsWrap{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #a2a2a2;
+    margin-left: 15px;
+  }
