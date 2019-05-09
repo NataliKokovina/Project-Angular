@@ -72,9 +72,9 @@
 
 .Apart_about-header{
   color: #05727e;
-  font-size: 18px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-bottom: 5px;
   font-weight: 600;
 }
@@ -179,3 +179,9 @@
   padding: 5px 15px;
 }
 
+.goBack{
+  position: absolute;
+  color: #05727e;
+  margin-top: -35px;
+  padding: 5px 10px;
+}

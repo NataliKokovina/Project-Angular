@@ -1,5 +1,5 @@
 .wrap{
-  background-color: #8ac1c742;
+  /* background-color: #8ac1c742; */
 }
 
 ::-webkit-scrollbar {
@@ -28,31 +28,44 @@
 
 .listItem{
   padding-inline-start: 0;
-  padding-top: 15px;
+  /* padding-top: 5px; */
   margin: 0 auto;
 }
 
-/* .list{
-  margin: 0 auto;
-} */
+.items{
+  list-style-type: none;
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #8ac1c742;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.errorApart{
+  position: absolute;
+  color: #a2a2a2;
+  margin-left: 12px;
+}
 
 .searchList{
   width: 100%;
-  max-height: 5%;
-  background-color: #9bd9e0;
+  min-height: 65px;
+  background-color: #17bed0;
   color: #ffffff;
-  padding: 10px;
+  padding: 5px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 18px;
 }
-
+.nameOfApartment{
+  width: 100%;
+  font-size: 24px;
+  border: 1px solid transparent;
+  color: #a2a2a2;
+}
 
 .searchListWrap{
-  width: 30%;
-}
-
-.selectedApartament{
-  width: 70%;
+  width: 100%;
 }
 
 .wrapForAll{
@@ -60,109 +73,42 @@
 }
 
 
-.imgMin{
-  width: 0;
-  height: 0;
-}
-
-.imgApartment{
-  width: 820px;
-  height: 520px;
-}
-
-.imgWrap{
-  position: relative;
-}
-
-.carousel{
+.wrapPriceAndLink{
   display: flex;
-  position: absolute;
-  align-items: center;
-  height: 520px;
-  background: transparent no-repeat center center;
-  background-size: 100% 100%;
-  color: #ffffff;
-  font-size: 50px;
+  justify-content: space-around;
 }
 
-.start:hover{
+.apartName{
   color: #05727e;
-}
-
-.end:hover{
-  color: #05727e;
-}
-
-.end{
-  right: 0;
-}
-
-.Apart_header{
-  margin-top: 1.5%;
-  margin-bottom: 1%;
-  color: #a2a2a2;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.Apart_nameOfApart{
-  margin-top: 1.5%;
-  margin-bottom: 1%;
-  color: #17bed0;
-  font-size: 25px;
   font-weight: 800;
+  font-size: 18px;
   text-transform: uppercase;
 }
 
-.Apart_address{
+.apartCity{
   color: #a2a2a2;
-  font-size: 14px;
-  margin-bottom: 5px;
+  /* font-weight: 800; */
+  font-size: 15px;
 }
 
-.Apart_about{
-  background-color: #f2f2f2;
-  width: 380px;
-  height: 450px;
-  overflow-x: hidden;
-}
-
-.Apart_about-header{
+.price{
   color: #05727e;
-  font-size: 18px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-bottom: 5px;
-  font-weight: 600;
+  margin-top: 7px;
+  font-weight: 800;
+  font-size: 20px;
 }
 
-.Apart_about-kitchenAppliances-amenities{
-  font-size: 14px;
-  margin-bottom: 10px;
-  margin-left: 6px;
+.btn-sale{
+  color: #ffffff;
+  background-color: #17bed0;
+  padding: 5px 24px;
+  text-decoration: none;
 }
 
-
-.Apart_wrap{
-  display: flex;
-  flex-wrap: wrap;
+.btn-sale:hover{
+  background-color: #05727e;
 }
 
-.Apart_inf{
-  background-color: #f2f2f2;
-  color: #a2a2a2;
-  font-size: 14px;
+.ng-invalid:not(form) {
+  border-left: 4px solid red;
 }
-
-.header_inf{
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  }
-
-  .Apart_ItemsWrap{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #a2a2a2;
-    margin-left: 15px;
-  }

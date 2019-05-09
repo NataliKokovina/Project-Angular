@@ -12,10 +12,10 @@ export class ListOfParametersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.filters = {
-      name: '',
+    // this.filters = {
+      // name: '',
 
-    }
+    // }
   }
 
 }

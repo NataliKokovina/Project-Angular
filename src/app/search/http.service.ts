@@ -20,6 +20,10 @@ export class HttpService {
 
   // }
 
+  getKey() {
+    return this.http.get('assets/key.json')
+  }
+
   getApartments():  Observable<Apartments[]> {
     return of(APARTMENTS);
   }

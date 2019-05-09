@@ -51,6 +51,8 @@ export class Apartments{
     jacuzzi: boolean;
     pool: boolean;
   };
+  lat: number;
+  lng: number;
   about: string;
   price: number;
   phoneNumber: string;

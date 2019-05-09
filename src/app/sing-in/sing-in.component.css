@@ -1,7 +1,7 @@
 .backLoginForm{
   background-image: url('/assets/img/kvartiry.jpg');
   height: 90vh;
-  background-size: cover;
+  background-size: 100wh auto;
   background-repeat: no-repeat;
   flex-grow: center;
   align-items: center;
@@ -77,30 +77,46 @@
   margin-top: 15px;
 }
 
+.singUpIn{
+  color: #17bed0;
+  text-decoration: none;
+  display: flex;
+  margin: 10px auto;
+}
+
 .singUp{
-  color: #a2a2a2;
+  color: #17bed0;
   text-decoration: none;
   font-weight: 800;
-  margin: 10px auto;
-  display: none;
+  margin-right: 10px;
+  /* margin-left: -20px; */
+  /* margin: 10px auto; */
+  display: inline-block;
 }
 
 .singUp:hover{
   color: #17bed0;
 }
 
+
 .loginForm_submit:hover{
   background-color: #17bed0;
 }
 
 .singIn{
-  color: #a2a2a2;
+  color: #17bed0;
   text-decoration: none;
   font-weight: 800;
-  margin: 10px auto;
-  display: none;
+  /* margin: 10px auto; */
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .visible{
   display: flex;
+}
+
+
+.grey{
+  color: #a2a2a2;
 }

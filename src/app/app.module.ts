@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, ApplicationRef } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RentMyApartmentComponent } from './rent-my-apartment/rent-my-apartment.component';
@@ -20,6 +20,13 @@ import { ListOfApartmentsComponent } from './search/list-of-apartments/list-of-a
 import { ListOfParametersComponent } from './search/list-of-parameters/list-of-parameters.component';
 import { ApartamentInfComponent } from './search/apartament-inf/apartament-inf.component';
 import { ApartmentsComponent } from './apartments/apartments.component';
+import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
+import { HttpService } from './search/http.service'
+import { MapGoogleComponent } from './search/map-google/map-google.component';
+import { SearchPipe } from './search/list-of-apartments/search.pipe';
+import { environment} from '../environments/environmentMy'
+// import {SearchPipe} from './search/list-of-apartments/search.pipe.ts'
 
 
 
@@ -35,7 +42,9 @@ import { ApartmentsComponent } from './apartments/apartments.component';
     ListOfApartmentsComponent,
     ListOfParametersComponent,
     ApartamentInfComponent,
-    ApartmentsComponent
+    ApartmentsComponent,
+    MapGoogleComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -47,9 +56,27 @@ import { ApartmentsComponent } from './apartments/apartments.component';
     FormsModule,
     CalendarModule,
     SingUpModule,
-    SingInModule
+    SingInModule,
+    CommonModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.apiKey
+    })
   ],
   providers: [HttpClientModule],
-  bootstrap: [AppComponent, HeaderComponent, HomeComponent]
+  bootstrap: [AppComponent, HeaderComponent, HomeComponent, ListOfApartmentsComponent, MapGoogleComponent]
 })
-export class AppModule { }
+export class AppModule {}
+// implements OnInit {
+//   myGoogleMapKey: string;
+
+//   constructor(private httpService: HttpService) { }
+
+//   ngOnInit() {
+//     this.getKey();
+//   }
+
+//    getKey() {
+//     return this.httpService.getKey().subscribe(key => this.myGoogleMapKey = key["key"]);
+
+//   }
+// }

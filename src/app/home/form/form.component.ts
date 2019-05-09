@@ -75,11 +75,12 @@ export class FormComponent implements OnInit{
 
   ngOnInit() {
      this.search = {
-      city: "",
+      city: "Київ",
       people: this.sumOfPeople,
       dateStart: new Date(),
       dateLast: new Date(),
     }
+    return this.search;
 
 
 
@@ -92,10 +93,10 @@ export class FormComponent implements OnInit{
   public submited(){
 
     this.formSubmited = true;
-
-    this.myHttp.post('postgres://igor:pass@localhost:5432/daikhatu', this.search).subscribe(
-      (reslt) => {console.log(this.fileData = reslt)}
-      );
+  
+    // this.myHttp.post('postgres://igor:pass@localhost:5432/daikhatu', this.search).subscribe(
+    //   (reslt) => {console.log(this.fileData = reslt)}
+    //   );
     this.router.navigate(['/search'])
 
 

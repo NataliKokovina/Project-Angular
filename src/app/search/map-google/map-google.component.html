@@ -1,0 +1,8 @@
+<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onChoseLocation($event)" [zoom]="zoom">
+  <agm-marker
+  *ngFor="let apartment of apartments"
+  [latitude]="apartment.lat"
+  [longitude]="apartment.lng"
+  [label]="apartment.price"
+  ></agm-marker>
+</agm-map>

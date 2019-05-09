@@ -15,10 +15,10 @@ export class SingUpComponent implements OnInit {
 
   ngOnInit() {
     this.userReg = {
-      name: "na",
-      email: "g",
+      name: "",
+      email: "",
       // password: "",
-      tel: +380,
+      tel: "+380",
     }
 
 }
