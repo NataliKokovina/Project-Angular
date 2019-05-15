@@ -3,12 +3,13 @@
 <div class="searchListWrap">
   <div class="searchList">
     <label class="nameOfApartmentLabel" for="name">Пошук за назвою:</label><br>
-    <input class="nameOfApartment" [(ngModel)]="filtersName" type="text" id="name" name="name">
+    <input class="nameOfApartment" [(ngModel)]="searchApart" type="text" id="name" name="name">
   </div>
   <div class="wrap">
+      <!-- {{filtersName | json}} -->
     <!-- <p class="errorApart" *ngIf="apartment" >За данними параметрами квартир не знайдено</p> -->
   <ul class="listItem">
-    <li class="items" *ngFor="let apartment of apartments | search:filtersName"
+    <li class="items" *ngFor="let apartment of apartments | search:searchApart"
       [class.selected]="apartment === selectedApartament"
       (click)="onSelect(apartment)">
 

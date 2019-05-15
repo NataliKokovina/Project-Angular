@@ -9,6 +9,7 @@ import {User} from '../user';
   providers: [HttpService]
 })
 export class SearchComponent implements OnInit {
+  nameOfSearchApart: string;
 
   // users: User[]=[];
 
@@ -18,4 +19,9 @@ export class SearchComponent implements OnInit {
   //   this.httpService.getUsers().subscribe(data => this.users=data);
   }
 
+  public searchApartment({name: name}){
+    this.nameOfSearchApart = name;
+    // console.log(this.nameOfSearchApart);
+    return this.nameOfSearchApart
+  }
 }

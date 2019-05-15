@@ -66,17 +66,3 @@ import { environment} from '../environments/environmentMy'
   bootstrap: [AppComponent, HeaderComponent, HomeComponent, ListOfApartmentsComponent, MapGoogleComponent]
 })
 export class AppModule {}
-// implements OnInit {
-//   myGoogleMapKey: string;
-
-//   constructor(private httpService: HttpService) { }
-
-//   ngOnInit() {
-//     this.getKey();
-//   }
-
-//    getKey() {
-//     return this.httpService.getKey().subscribe(key => this.myGoogleMapKey = key["key"]);
-
-//   }
-// }

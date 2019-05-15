@@ -54,7 +54,7 @@ export class Apartments{
   lat: number;
   lng: number;
   about: string;
-  price: number;
+  price: string;
   phoneNumber: string;
 }
 

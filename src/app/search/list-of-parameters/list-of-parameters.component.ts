@@ -18,4 +18,5 @@ export class ListOfParametersComponent implements OnInit {
     // }
   }
 
+
 }

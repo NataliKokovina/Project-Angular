@@ -2,3 +2,30 @@ agm-map {
   height: 90vh;
   width: 100%;
 }
+
+agm-marker{
+  color: #fff;
+}
+
+.labelOption{
+  color: #fff;
+}
+
+.infoWindowName{
+  text-transform: uppercase;
+}
+
+.infoWindowLink{
+  /* border: 1px solid #158692; */
+  padding: 3px 5px;
+  background-color: #158692;
+  color: #fff;
+  text-decoration: none;
+}
+
+.infoWindow{
+  font-size: 15px;
+  color: #158692;
+  padding: 3px 5px;
+  font-weight: 800;
+}

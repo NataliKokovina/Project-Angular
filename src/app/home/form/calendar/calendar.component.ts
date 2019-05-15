@@ -83,9 +83,7 @@ export class CalendarComponent implements OnInit {
   searchDate(){
     this.start.emit({start: this.selectionBegin, last: this.selectionEnd});
   }
-  // log() {
-  //   console.log('log sdsdsdsdsdsdsdsdsd');
-  // }
+
 
   // searchDateLast(){
   //   this.start.emit(this.selectionEnd);

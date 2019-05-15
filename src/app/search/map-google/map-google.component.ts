@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output, EventEmitter} from '@angular/core';
 import { HttpService } from '../http.service';
 import { Apartments } from '../list-of-apartments/apartments';
 
@@ -10,10 +10,13 @@ import { Apartments } from '../list-of-apartments/apartments';
   providers: [HttpService]
 })
 export class MapGoogleComponent implements OnInit {
+  @Output() searchInfFromWindow = new EventEmitter<{name: string}>();
   lat: number = 50.455046;
   lng: number = 30.521289;
   zoom: number = 12;
+  label: string;
   apartments: Apartments[]=[];
+  searchName: string;
 
   constructor(private httpService: HttpService) { }
 
@@ -28,5 +31,26 @@ export class MapGoogleComponent implements OnInit {
   getApartments(): void {
     this.httpService.getApartments().subscribe(apartments => this.apartments = apartments)
   }
+
+  onMouseOver(infoWindow, gm) {
+
+    if (gm.lastOpen != null) {
+        gm.lastOpen.close();
+    }
+
+    gm.lastOpen = infoWindow;
+
+    infoWindow.open();
+
+
+}
+
+onClickInfoView(name: string){
+  // console.log(name);
+  this.searchName = name;
+  this.searchInfFromWindow.emit({name: this.searchName})
+
+}
+
 
 }

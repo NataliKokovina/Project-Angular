@@ -1,6 +1,6 @@
 <div class="wraper">
   <app-list-of-parameters></app-list-of-parameters>
-  <app-list-of-apartments></app-list-of-apartments>
-  <app-map-google></app-map-google>
+  <app-list-of-apartments [searchApart]="nameOfSearchApart"></app-list-of-apartments>
+  <app-map-google (searchInfFromWindow)="searchApartment($event)"></app-map-google>
 </div>
-
+<!--  -->

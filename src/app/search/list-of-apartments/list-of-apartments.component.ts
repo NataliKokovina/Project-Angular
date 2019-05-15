@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Apartments } from './apartments';
 
@@ -10,24 +10,39 @@ import { Apartments } from './apartments';
   providers: [HttpService]
 })
 export class ListOfApartmentsComponent implements OnInit {
-
+  @Input() public searchApart: string;
   apartments: Apartments[]=[];
   selectedApartament: Apartments;
   hasApp: boolean = false;
-  filtersName = '';
+  filtersName = "";
+
 
   constructor(private httpService: HttpService) { }
 
+
+
   ngOnInit() {
+    if(this.searchApart == undefined){
+      this.searchApart = "";
+    }
 
     // this.httpService.getApartment().subscribe(data => this.apartments=data["apartmentList"]);
     // this.getApartment();
+
       this.getApartments();
+
+  }
+
+  display(){
+    this.filtersName = this.searchApart;
+    console.log(this.filtersName);
   }
 
   getApartments(): void {
     this.httpService.getApartments().subscribe(apartments => this.apartments = apartments.slice(0, 5));
   }
+
+
 
   // onChoseLocation(event){
   //   console.log(event);

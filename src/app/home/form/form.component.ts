@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Output, EventEmitter } from '@angular/core';
 import { Search } from '../search';
 import { Router } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar.component';
@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit{
+  @Output() searchInf = new EventEmitter<{city: any, start: any, last: any, people: any}>();
   fileData: any;
   isMiniCalendar: boolean = false;
   activeOfPeople: boolean = false;
@@ -93,16 +94,22 @@ export class FormComponent implements OnInit{
   public submited(){
 
     this.formSubmited = true;
-  
+
     // this.myHttp.post('postgres://igor:pass@localhost:5432/daikhatu', this.search).subscribe(
     //   (reslt) => {console.log(this.fileData = reslt)}
     //   );
-    this.router.navigate(['/search'])
 
+    this.searchInf.emit({city: this.search.city, start: this.search.dateStart, last: this.search.dateLast, people:this.search.people})
+
+    this.router.navigate(['/search'])
 
     // https://metanit.com/web/angular2/6.4.php
     // todo: прописать логику отправки данных
   }
+
+  // searchDate(){
+  //   this.searchInf.emit({city: this.search.city, start: this.search.dateStart, last: this.search.dateLast, people:this.search.people})
+  // };
   // initSearchForm() {
   //   this.searchForm = new FormGroup({
   //     city: new FormControl(),
