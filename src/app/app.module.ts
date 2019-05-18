@@ -25,7 +25,10 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpService } from './search/http.service'
 import { MapGoogleComponent } from './search/map-google/map-google.component';
 import { SearchPipe } from './search/list-of-apartments/search.pipe';
-import { environment} from '../environments/environmentMy'
+import { environment} from '../environments/environmentMy';
+import { FilterPlacePipe } from '../app/search/list-of-parameters/searchType.pipe';
+import { ProfileComponent } from './profile/profile.component';
+import { FilterRentPipe } from './search/list-of-parameters/searchRentType.pipe';
 // import {SearchPipe} from './search/list-of-apartments/search.pipe.ts'
 
 
@@ -44,7 +47,10 @@ import { environment} from '../environments/environmentMy'
     ApartamentInfComponent,
     ApartmentsComponent,
     MapGoogleComponent,
-    SearchPipe
+    SearchPipe,
+    FilterPlacePipe,
+    ProfileComponent,
+    FilterRentPipe,
   ],
   imports: [
     BrowserModule,

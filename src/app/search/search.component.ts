@@ -10,6 +10,8 @@ import {User} from '../user';
 })
 export class SearchComponent implements OnInit {
   nameOfSearchApart: string;
+  typeF = "";
+  rentF = "";
 
   // users: User[]=[];
 
@@ -17,6 +19,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
   //   this.httpService.getUsers().subscribe(data => this.users=data);
+
   }
 
   public searchApartment({name: name}){
@@ -24,4 +27,12 @@ export class SearchComponent implements OnInit {
     // console.log(this.nameOfSearchApart);
     return this.nameOfSearchApart
   }
+
+  public filtersForApartment({typeF: typeF, rentF: rentF}){
+    this.typeF = typeF;
+    this.rentF = rentF;
+    return this.typeF, this.rentF
+  }
+
+
 }

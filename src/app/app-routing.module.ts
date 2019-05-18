@@ -6,6 +6,8 @@ import { SingInComponent } from './sing-in/sing-in.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { SearchComponent } from './search/search.component';
 import {ApartamentInfComponent} from './search/apartament-inf/apartament-inf.component'
+import { Profile } from 'selenium-webdriver/firefox';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: 'rent-my-apartment', component: RentMyApartmentComponent },
@@ -14,7 +16,8 @@ const routes: Routes = [
   { path: 'sing-in', component: SingInComponent },
   { path: 'sing-up', component: SingUpComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'detail/:id', component: ApartamentInfComponent}
+  { path: 'detail/:id', component: ApartamentInfComponent},
+  { path: 'profile', component: ProfileComponent},
 ]
 
 @NgModule({

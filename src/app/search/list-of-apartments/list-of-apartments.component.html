@@ -7,9 +7,9 @@
   </div>
   <div class="wrap">
       <!-- {{filtersName | json}} -->
-    <!-- <p class="errorApart" *ngIf="apartment" >За данними параметрами квартир не знайдено</p> -->
+    <!-- <p class="errorApart" *ngIf="apartment" >За данними параметрами квартир не знайдено</p>  -->
   <ul class="listItem">
-    <li class="items" *ngFor="let apartment of apartments | search:searchApart"
+    <li class="items" *ngFor="let apartment of apartments | search:searchApart | place:filterType | rent: filteRent"
       [class.selected]="apartment === selectedApartament"
       (click)="onSelect(apartment)">
 

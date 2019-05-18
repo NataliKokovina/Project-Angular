@@ -1,4 +1,4 @@
-import { Component, OnInit , Output, EventEmitter} from '@angular/core';
+import { Component, OnInit , Output, Input, EventEmitter} from '@angular/core';
 import { HttpService } from '../http.service';
 import { Apartments } from '../list-of-apartments/apartments';
 
@@ -11,6 +11,9 @@ import { Apartments } from '../list-of-apartments/apartments';
 })
 export class MapGoogleComponent implements OnInit {
   @Output() searchInfFromWindow = new EventEmitter<{name: string}>();
+  @Input() public searchApart: string;
+  @Input() public filterType: string;
+  @Input() public filteRent: string;
   lat: number = 50.455046;
   lng: number = 30.521289;
   zoom: number = 12;
@@ -22,7 +25,17 @@ export class MapGoogleComponent implements OnInit {
 
 
   ngOnInit() {
+    if(this.searchApart == undefined){
+      this.searchApart = "";
+    }
 
+    if(this.filterType == undefined){
+      this.filterType = "";
+    }
+
+    if(this.filteRent == undefined){
+      this.filteRent = "";
+    }
     // this.httpService.getApartment().subscribe(data => this.apartments=data["apartmentList"]);
     // this.getApartment();
       this.getApartments();

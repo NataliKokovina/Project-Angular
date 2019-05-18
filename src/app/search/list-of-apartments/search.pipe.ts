@@ -2,7 +2,7 @@ import { Pipe, PipeTransform} from '@angular/core';
 
 @Pipe(
   {
-    name: 'search'
+    name: 'search',
   }
 )
 
@@ -13,4 +13,5 @@ export class SearchPipe implements PipeTransform {
       return apartment.name.includes(value)
     })
   }
+
 }
