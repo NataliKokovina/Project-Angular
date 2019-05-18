@@ -1,6 +1,6 @@
 <div class="wraper">
   <app-list-of-parameters (filters)="filtersForApartment($event)"></app-list-of-parameters>
-  <app-list-of-apartments [searchApart]="nameOfSearchApart" [filterType]="typeF" [filteRent]="rentF" ></app-list-of-apartments>
-  <app-map-google (searchInfFromWindow)="searchApartment($event)" [searchApart]="nameOfSearchApart" [filterType]="typeF" [filteRent]="rentF"></app-map-google>
+  <app-list-of-apartments [searchApart]="nameOfSearchApart" [filterType]="typeF" [filteRent]="rentF" [searchCity]="city"></app-list-of-apartments>
+  <app-map-google (searchInfFromWindow)="searchApartment($event)" [searchApart]="nameOfSearchApart" [filterType]="typeF" [filteRent]="rentF" [searchCity]="city"></app-map-google>
 </div>
 <!--  -->

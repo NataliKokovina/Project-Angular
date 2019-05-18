@@ -23,8 +23,13 @@
   height: 59px;
   font-size: 40px;
   border: 1px solid #a2a2a2;
-  color: #a2a2a2;
+  color: #05727e;
   background-color: rgb(255, 255, 255);
+}
+
+.searchForm_input::placeholder{
+  color: #a2a2a2;
+  font-size: 30px;
 }
 
 .imgItems{
@@ -52,6 +57,11 @@
   border: 1px solid #17bed0;
 }
 
+.searchForm_searchButton:hover{
+  background-color: #05727e;
+  border: 1px solid #05727e;
+}
+
 .imgItemsSearch{
   fill: #FFF;
   width: 50px;
@@ -61,20 +71,30 @@
 
 .searchForm_numberPeople{
   background-color: #FFF;
-  border: 1px solid #17bed0;
+  border: 1px solid #a2a2a2;
 }
 
 .input-numberPeople__value{
   padding: 15px;
   font-size: 20px;
   color: #17bed0;
+  font-weight: 600;
 }
 
 .input-numberPeople{
-  background: #17bed0;
-  background-color: transparent;
+  background: transparent;
   display: inline-block;
-  padding: 15px;
+  padding: 5px;
+  font-size: 20px;
+  color: #05727e;
+  font-weight: 600;
+  width: 25px;
+}
+
+.input-numberPeople:hover{
+  color: #05727e;
+  font-weight: 800;
+  background-color: #17bed01c;
 }
 
 /* .btn{

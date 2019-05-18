@@ -29,6 +29,7 @@ import { environment} from '../environments/environmentMy';
 import { FilterPlacePipe } from '../app/search/list-of-parameters/searchType.pipe';
 import { ProfileComponent } from './profile/profile.component';
 import { FilterRentPipe } from './search/list-of-parameters/searchRentType.pipe';
+import { CityPipe } from './search/list-of-apartments/searchCity.pipe';
 // import {SearchPipe} from './search/list-of-apartments/search.pipe.ts'
 
 
@@ -51,6 +52,7 @@ import { FilterRentPipe } from './search/list-of-parameters/searchRentType.pipe'
     FilterPlacePipe,
     ProfileComponent,
     FilterRentPipe,
+    CityPipe
   ],
   imports: [
     BrowserModule,

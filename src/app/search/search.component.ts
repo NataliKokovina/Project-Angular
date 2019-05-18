@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators'
 import { HttpService} from './http.service';
+
 import {User} from '../user';
 
 @Component({
@@ -12,14 +15,25 @@ export class SearchComponent implements OnInit {
   nameOfSearchApart: string;
   typeF = "";
   rentF = "";
+  city = "";
 
   // users: User[]=[];
 
-  constructor(private httpService: HttpService) { }
-
+  constructor(private route: ActivatedRoute){}
+  // private someFunction(){
+  //    this.route.paramMap
+  //    .subscribe((params: ParamMap) =>{
+  //         console.log(params.get('city'))
+  //       });
+  // }
   ngOnInit() {
   //   this.httpService.getUsers().subscribe(data => this.users=data);
-
+  this.route.paramMap
+  .subscribe((params: ParamMap) =>{
+       console.log(params.get('city'))
+       this.city = params.get('city');
+       console.log(this.city);
+     });
   }
 
   public searchApartment({name: name}){

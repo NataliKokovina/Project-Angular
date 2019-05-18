@@ -76,7 +76,7 @@ export class FormComponent implements OnInit{
 
   ngOnInit() {
      this.search = {
-      city: "Київ",
+      city: "",
       people: this.sumOfPeople,
       dateStart: new Date(),
       dateLast: new Date(),
@@ -101,7 +101,7 @@ export class FormComponent implements OnInit{
 
     this.searchInf.emit({city: this.search.city, start: this.search.dateStart, last: this.search.dateLast, people:this.search.people})
 
-    this.router.navigate(['/search'])
+    this.router.navigate(['/search', { city: this.search.city}])
 
     // https://metanit.com/web/angular2/6.4.php
     // todo: прописать логику отправки данных

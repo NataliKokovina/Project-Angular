@@ -14,9 +14,10 @@ export class MapGoogleComponent implements OnInit {
   @Input() public searchApart: string;
   @Input() public filterType: string;
   @Input() public filteRent: string;
-  lat: number = 50.455046;
-  lng: number = 30.521289;
-  zoom: number = 12;
+  @Input() public searchCity: string;
+  lat: number;
+  lng: number;
+  zoom: number;
   label: string;
   apartments: Apartments[]=[];
   searchName: string;
@@ -39,6 +40,18 @@ export class MapGoogleComponent implements OnInit {
     // this.httpService.getApartment().subscribe(data => this.apartments=data["apartmentList"]);
     // this.getApartment();
       this.getApartments();
+
+      if(this.searchCity == "Київ"){
+        this.lat = 50.449445;
+        this.lng = 30.523380;
+        this.zoom = 12;
+      };
+
+      if(this.searchCity == "Черкаси"){
+        this.lat = 49.444194;
+        this.lng = 32.058955;
+        this.zoom = 14;
+      };
   }
 
   getApartments(): void {

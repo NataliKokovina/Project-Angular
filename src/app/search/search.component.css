@@ -4,11 +4,13 @@
 
 app-list-of-parameters{
     width: 20%;
+    min-width: 300px;
   height: 89.3vh;
 }
 
 app-list-of-apartments{
   width: 20%;
+  min-width: 300px;
   /* background-color: #a2a2b5; */
   max-height: 90vh;
   position: relative;
@@ -40,3 +42,22 @@ app-map-google{
   background: #17bed0;
 }
 
+@media screen and (max-width:600px) {
+  app-list-of-parameters{
+    min-width: 200px;
+}
+app-list-of-apartments{
+  width: 100%;
+}
+app-map-google{
+  max-height: 90vh;
+  width: 0;
+}
+
+}
+
+@media screen and (max-width:500px) {
+  app-list-of-parameters{
+    display: none;
+}
+}

@@ -13,11 +13,13 @@ export class ListOfApartmentsComponent implements OnInit {
   @Input() public searchApart: string;
   @Input() public filterType: string;
   @Input() public filteRent: string;
+  @Input() public searchCity: string;
 
   apartments: Apartments[]=[];
   selectedApartament: Apartments;
   hasApp: boolean = false;
   filtersName = "";
+
   // filterType = "";
 
 
@@ -36,6 +38,10 @@ export class ListOfApartmentsComponent implements OnInit {
 
     if(this.filteRent == undefined){
       this.filteRent = "";
+    }
+
+    if(this.searchCity == undefined){
+      this.searchCity = "";
     }
 
 

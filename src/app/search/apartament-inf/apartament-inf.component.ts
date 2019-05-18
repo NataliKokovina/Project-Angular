@@ -41,6 +41,8 @@ export class ApartamentInfComponent implements OnInit {
   shower: boolean;
   jacuzzi: boolean;
   pool: boolean;
+  rentType: string;
+  placeType: string;
 
 
   constructor(
@@ -50,6 +52,22 @@ export class ApartamentInfComponent implements OnInit {
 
   ngOnInit(){
     this.getApart();
+
+    if( this.apartment.rentType == "1"){
+      this.rentType = "Приватний будинок";
+    } else{this.rentType = "Квартира"}
+
+
+    if( this.apartment.placeType == "1"){
+      this.placeType = "Все помешкання";
+    } else if(this.apartment.placeType == "2"){
+      this.placeType = "Кімната"
+    } else {
+      this.placeType = "Ліжко-місце"
+    }
+    // rentType: string;
+    // placeType: string;
+
   }
 
   getApart(): void{
