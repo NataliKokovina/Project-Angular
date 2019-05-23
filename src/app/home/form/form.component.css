@@ -97,19 +97,6 @@
   background-color: #17bed01c;
 }
 
-/* .btn{
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 1rem;
-  line-height: 1.5;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-} */
-
 .ng-valid[required], ng-valid.required {
   border-left: 4px solid #17bed0;
 }

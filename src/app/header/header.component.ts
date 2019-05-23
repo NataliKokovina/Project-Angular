@@ -21,14 +21,10 @@ export class HeaderComponent implements OnInit {
 
   // searchDate({city: city, start: start, last: last, people: people}){
   //   this.city = city;
-  //   console.log(city);
-  //   console.log(start);
-  //   console.log(last);
-  //   console.log(people);
   // }
 
   ngOnInit() {
 
-    // console.log(this.city);
+
   }
 }

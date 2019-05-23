@@ -17,17 +17,10 @@ export class SearchComponent implements OnInit {
   rentF = "";
   city = "";
 
-  // users: User[]=[];
 
   constructor(private route: ActivatedRoute){}
-  // private someFunction(){
-  //    this.route.paramMap
-  //    .subscribe((params: ParamMap) =>{
-  //         console.log(params.get('city'))
-  //       });
-  // }
+
   ngOnInit() {
-  //   this.httpService.getUsers().subscribe(data => this.users=data);
   this.route.paramMap
   .subscribe((params: ParamMap) =>{
        console.log(params.get('city'))
@@ -38,7 +31,6 @@ export class SearchComponent implements OnInit {
 
   public searchApartment({name: name}){
     this.nameOfSearchApart = name;
-    // console.log(this.nameOfSearchApart);
     return this.nameOfSearchApart
   }
 

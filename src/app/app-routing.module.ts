@@ -27,4 +27,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-// loadChildren линивая загрузка ссылаемся на модуль и его название
+

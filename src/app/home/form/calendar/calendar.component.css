@@ -1,8 +1,3 @@
-/* .calendar-container{
-  position: relative;
-  display: inline-block;
-
-} */
 .calendar{
   width: 200px;
   position: absolute;
@@ -12,6 +7,7 @@
   left: 99px;
   border: 1px solid #a2a2a2;
 }
+
 .day-bar{
   width: calc(100% / 7);
   height: 30px;
@@ -23,24 +19,30 @@
   cursor: default;
   box-sizing: border-box;
 }
+
 .day-bar:hover{
   border: 2px solid #a2a2a2;
 }
+
 .day-of-another-month{
   color: lightgrey;
 }
+
 .days-container{
   display: inline-block;
 }
+
 .calender-header{
   display: flex;
   justify-content: space-between;
   background-color: #17bed0;
 }
+
 .selected-date{
   background-color: #17bed0;
   color: #fff;
 }
+
 .last-clicked{
   border: 2px solid #a2a2a2;
 }

@@ -17,7 +17,6 @@ export class HttpService {
 
   // getApartment() {
   //   return this.http.get('assets/apartments.json')
-
   // }
 
   getKey() {
@@ -29,8 +28,6 @@ export class HttpService {
   }
 
   getApart(id: number): Observable<Apartments> {
-    // TODO: send the message _after_ fetching the hero
-    // this.messageService.add(`HttpService: fetched hero id=${id}`);
     return of(APARTMENTS.find(apartment => apartment.id === id));
   }
   // getApart() {

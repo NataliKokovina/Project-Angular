@@ -73,3 +73,14 @@ p, legend, .nameOfApartmentLabel{
 fieldset{
   border: 1px solid #17bed0;
 }
+
+input[type="radio"]:checked {
+  font-weight: 800;
+  color: #ffff;
+}
+
+.radio:hover{
+  font-weight: 800;
+  color: #158692;
+}
+

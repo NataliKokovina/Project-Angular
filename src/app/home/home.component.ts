@@ -15,26 +15,17 @@ export class HomeComponent implements OnInit {
   people:number
 
 
-  constructor() {
-
-  }
+  constructor() {}
 
   searchDate({city: city, start: start, last: last, people: people}){
     this.city = city;
     this.start = start;
     this.last =last;
     this.people = people;
-    // console.log(city);
-    // console.log(start);
-    // console.log(last);
-    // console.log(people);
+
     this.searchInf.emit({city: this.city, start: this.start, last: this.last, people:this.last})
   }
 
-  ngOnInit() {
-
-}
-
-
+  ngOnInit() {}
 
 }

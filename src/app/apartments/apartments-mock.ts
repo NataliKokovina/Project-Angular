@@ -17,7 +17,7 @@ export const APARTMENTS: Apartments [] =[
         "apartment": 14
       },
       "rentType": "1",
-      "placeType": "1",
+      "placeType": "2",
       "beds": 2,
       "kitchenAppliances":  {
         "plate": true,
@@ -237,7 +237,7 @@ export const APARTMENTS: Apartments [] =[
       "photo": "/assets/img/a.jpeg",
       "photo2": "/assets/img/a1.jpeg",
       "photo3": "/assets/img/a2.jpg",
-      "photo4": "/assets/img/a3.jpg",
+      "photo4": "/assets/img/a3.jpeg",
       "adress": {
         "city": "Київ",
         "street": "вул. Соборна",
@@ -361,7 +361,7 @@ export const APARTMENTS: Apartments [] =[
       "apartment": 5,
     },
     "rentType": "2",
-    "placeType": "1",
+    "placeType": "2",
     "beds": 2,
     "kitchenAppliances":  {
       "plate": true,
@@ -522,9 +522,9 @@ export const APARTMENTS: Apartments [] =[
     "name": "дім на соборній",
     "guests": 3,
     "photo": "/assets/img/g.jpg",
-    "photo2": "/assets/img/g1.jpeg",
+    "photo2": "/assets/img/g1.jpg",
     "photo3": "/assets/img/g2.jpg",
-    "photo4": "/assets/img/g3.jpeg",
+    "photo4": "/assets/img/g3.jpg",
     "adress": {
       "city": "Київ",
       "street": "вул. Соборна",

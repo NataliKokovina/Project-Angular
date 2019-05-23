@@ -65,9 +65,6 @@ export class ApartamentInfComponent implements OnInit {
     } else {
       this.placeType = "Ліжко-місце"
     }
-    // rentType: string;
-    // placeType: string;
-
   }
 
   getApart(): void{
@@ -107,18 +104,12 @@ export class ApartamentInfComponent implements OnInit {
     this.location.back();
   }
 
-  // imgApartment(photo: string): void{
-  //   this.imgApart = photo;
-  //   console.log(photo);
-  // }
-
   imgApartmentAfter() {
     if(this.imgApart<4){
       this.imgApart++
     } else{
       this.imgApart = 1;
     }
-    // console.log(this.imgApart);
     return this.imgApart;
   }
 
@@ -128,7 +119,6 @@ export class ApartamentInfComponent implements OnInit {
     } else{
       this.imgApart = 4;
     }
-    // console.log(this.imgApart);
     return this.imgApart;
   }
 

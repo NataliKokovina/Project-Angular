@@ -13,7 +13,6 @@ export class ApartmentsComponent implements OnInit {
 
   selectedApartament: Apartments;
   apartaments: Apartments [];
-  // apartaments = APARTMENTS;
 
   constructor(private httpServise: HttpService) { }
 

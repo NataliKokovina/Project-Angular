@@ -22,11 +22,10 @@ export class FormComponent implements OnInit{
   dateStart: Date;
   dateFinish: Date;
   formSubmited: boolean = false;
-  // myUrl: string;
+
 
   public search: Search;
 
-  // searchForm: FormGroup; AfterViewInit
 
   miniCalendar(){
     this.isMiniCalendar = !this.isMiniCalendar;
@@ -64,10 +63,7 @@ export class FormComponent implements OnInit{
       return this.search['people'] = this.sumOfPeople;
   }
 
-  // @ViewChild('calendar') calendar: any;
   constructor(private myHttp: HttpClient, private router: Router) {}
-
-
 
   onStart({start: startDate, last: lastDate}){
     this.search['dateStart'] = startDate;
@@ -83,13 +79,6 @@ export class FormComponent implements OnInit{
     }
     return this.search;
 
-
-
-
-    // console.log(this.search);
-    // this.initSearchForm();
-
-    // todo: передача city
   }
   public submited(){
 
@@ -103,7 +92,6 @@ export class FormComponent implements OnInit{
 
     this.router.navigate(['/search', { city: this.search.city}])
 
-    // https://metanit.com/web/angular2/6.4.php
     // todo: прописать логику отправки данных
   }
 
