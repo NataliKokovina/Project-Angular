@@ -18,7 +18,7 @@ export class SingUpComponent implements OnInit {
       name: "",
       email: "",
       // password: "",
-      tel: "+380",
+      tel: "",
     }
 
 }
@@ -36,4 +36,3 @@ public submited(){
 }
 }
 
-// options: {header('Access-Control-Allow-Origin: *')}

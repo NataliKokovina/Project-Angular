@@ -18,14 +18,8 @@ export class ListOfApartmentsComponent implements OnInit {
   apartments: Apartments[]=[];
   selectedApartament: Apartments;
   hasApp: boolean = false;
-  filtersName = "";
-
-  // filterType = "";
-
 
   constructor(private httpService: HttpService) { }
-
-
 
   ngOnInit() {
     if(this.searchApart == undefined){
@@ -60,12 +54,6 @@ export class ListOfApartmentsComponent implements OnInit {
   getApartments(): void {
     this.httpService.getApartments().subscribe(apartments => this.apartments = apartments);
   }
-
-
-
-  // onChoseLocation(event){
-  //   console.log(event);
-  // }
 
   // getApartment(): void {
   //   this.httpService.getApartment()

@@ -1,29 +1,27 @@
 <div class="FiltersWrap">
 <div class="Filters">Фільтри: </div>
-<!-- <button type="submit" class="btn filtersBtn">Пошук</button> -->
 </div>
 <form class="formWrap" action="">
 
     <fieldset>
       <legend>Тип помешкання:  </legend>
       <section>
-<!-- (click)="searchList()"  -->
-        <input (click)="searchList()" type="radio" name="placeType" id="allplace" value="" [(ngModel)]="typeF" >
-        <label for="allplace">Всі варіанти</label><br>
-        <input (click)="searchList()" type="radio" name="placeType" id="house" value="1" [(ngModel)]="typeF" >
-        <label for="house">Приватний будинок</label><br>
-        <input (click)="searchList()" type="radio" name="placeType" id="flat" value="2" [(ngModel)]="typeF">
-        <label for="flat">Квартира</label>
+        <input class="radio" (click)="searchList()" type="radio" name="placeType" id="allplace" value="" [(ngModel)]="typeF" >
+        <label class="radio" for="allplace">Всі варіанти</label><br>
+        <input class="radio" (click)="searchList()" type="radio" name="placeType" id="house" value="1" [(ngModel)]="typeF" >
+        <label class="radio" for="house">Приватний будинок</label><br>
+        <input class="radio" (click)="searchList()" type="radio" name="placeType" id="flat" value="2" [(ngModel)]="typeF">
+        <label class="radio" for="flat">Квартира</label>
       </section>
       <section> <p>Тип здачі:  </p>
-        <input (click)="searchList()" type="radio" name="rentType" id="allRentType" value="" [(ngModel)]="rentF" >
-        <label for="allRentType">Всі варіанти</label><br>
-        <input (click)="searchList()" type="radio" name="rentType" id="all" value="1" [(ngModel)]="rentF" >
-        <label for="all">Все помешкання</label><br>
-        <input (click)="searchList()" type="radio" name="rentType" id="room" value="2" [(ngModel)]="rentF">
-        <label for="room">Кімната</label><br>
-        <input (click)="searchList()" type="radio" name="rentType" id="bed" value="3" [(ngModel)]="rentF">
-        <label for="bed">Ліжко-місце</label>
+        <input class="radio" (click)="searchList()" type="radio" name="rentType" id="allRentType" value="" [(ngModel)]="rentF" >
+        <label class="radio" for="allRentType">Всі варіанти</label><br>
+        <input class="radio" (click)="searchList()" type="radio" name="rentType" id="all" value="1" [(ngModel)]="rentF" >
+        <label class="radio" for="all">Все помешкання</label><br>
+        <input class="radio" (click)="searchList()" type="radio" name="rentType" id="room" value="2" [(ngModel)]="rentF">
+        <label class="radio" for="room">Кімната</label><br>
+        <input class="radio" (click)="searchList()" type="radio" name="rentType" id="bed" value="3" [(ngModel)]="rentF">
+        <label class="radio" for="bed">Ліжко-місце</label>
       </section>
   </fieldset>
   <fieldset>

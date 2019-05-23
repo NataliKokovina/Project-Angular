@@ -85,9 +85,5 @@ export class CalendarComponent implements OnInit {
   }
 
 
-  // searchDateLast(){
-  //   this.start.emit(this.selectionEnd);
-  // }
-
 }
 

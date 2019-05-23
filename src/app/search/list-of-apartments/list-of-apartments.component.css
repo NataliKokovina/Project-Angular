@@ -26,7 +26,6 @@
 
 .listItem{
   padding-inline-start: 0;
-  /* padding-top: 5px; */
   margin: 0 auto;
 }
 
@@ -70,7 +69,6 @@
   display: flex;
 }
 
-
 .wrapPriceAndLink{
   display: flex;
   justify-content: space-around;
@@ -85,7 +83,6 @@
 
 .apartCity{
   color: #a2a2a2;
-  /* font-weight: 800; */
   font-size: 15px;
 }
 

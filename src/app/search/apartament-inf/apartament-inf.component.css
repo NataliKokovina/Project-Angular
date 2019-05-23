@@ -85,7 +85,6 @@
   margin-left: 6px;
 }
 
-
 .Apart_wrap{
   display: flex;
   flex-wrap: wrap;
@@ -101,7 +100,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
-  }
+}
 
 .showPhoneNumber{
   background-color: #17bed0;
@@ -166,7 +165,6 @@
   color: #fc354c;
   font-size: 45px;
   font-weight: 800;
-
 }
 
 .service{
@@ -184,4 +182,9 @@
   color: #05727e;
   margin-top: -35px;
   padding: 5px 10px;
+}
+
+.goBack:hover{
+  background-color: #05727e;
+  color: #ffffff;
 }

@@ -34,7 +34,6 @@ export class SingInComponent implements OnInit {
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
         console.log(socialPlatform+" sign in data : " , userData);
-        // Now sign-in with userData
         this.user.img = userData.image;
         this.user.email=userData.email;
       }

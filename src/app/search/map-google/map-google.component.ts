@@ -68,11 +68,9 @@ export class MapGoogleComponent implements OnInit {
 
     infoWindow.open();
 
-
 }
 
 onClickInfoView(name: string){
-  // console.log(name);
   this.searchName = name;
   this.searchInfFromWindow.emit({name: this.searchName})
 

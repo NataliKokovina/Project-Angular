@@ -11,12 +11,11 @@ import {Apartments} from '../list-of-apartments/apartments';
 })
 export class ListOfParametersComponent implements OnInit {
   @Output() filters = new EventEmitter<{typeF: string, rentF: string}>();
-  // public filters: FilterList
+
   apartments: Apartments[]=[];
   placeType: number
   typeF = "";
   rentF = "";
-
 
 
   constructor(private httpService: HttpService) { }
@@ -28,8 +27,6 @@ export class ListOfParametersComponent implements OnInit {
       this.filters.emit({typeF: this.typeF, rentF: this.rentF })
     }, 100)
   }
-
-
 
   ngOnInit() {
     this.getApartments();
