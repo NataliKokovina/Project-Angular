@@ -1,6 +1,4 @@
-.wrap{
-  background-color: #8ac1c742;
-}
+
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -21,27 +19,94 @@
   background: #555;
 }
 
-.imgApartment{
+.imgApart{
   height: 150px;
   width: 90%;
 }
 
 .listItem{
   padding-inline-start: 0;
-  padding-top: 15px;
+  /* padding-top: 5px; */
+  margin: 0 auto;
 }
 
-.list{
-  margin: 0 auto;
+.items{
+  list-style-type: none;
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #8ac1c742;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.errorApart{
+  position: absolute;
+  color: #a2a2a2;
+  margin-left: 12px;
 }
 
 .searchList{
   width: 100%;
-  max-height: 5%;
-  background-color: #9bd9e0;
+  min-height: 65px;
+  background-color: #17bed0;
   color: #ffffff;
-  padding: 10px;
+  padding: 5px;
   font-weight: 600;
+  font-size: 18px;
+}
+.nameOfApartment{
+  width: 100%;
+  font-size: 24px;
+  border: 1px solid transparent;
+  color: #a2a2a2;
+}
+
+.searchListWrap{
+  width: 100%;
+}
+
+.wrapForAll{
+  display: flex;
+}
+
+
+.wrapPriceAndLink{
+  display: flex;
+  justify-content: space-around;
+}
+
+.apartName{
+  color: #05727e;
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.apartCity{
+  color: #a2a2a2;
+  /* font-weight: 800; */
   font-size: 15px;
 }
 
+.price{
+  color: #05727e;
+  margin-top: 7px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.btn-sale{
+  color: #ffffff;
+  background-color: #17bed0;
+  padding: 5px 24px;
+  text-decoration: none;
+}
+
+.btn-sale:hover{
+  background-color: #05727e;
+}
+
+.ng-invalid:not(form) {
+  border-left: 4px solid red;
+}

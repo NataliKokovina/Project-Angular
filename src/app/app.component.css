@@ -1,0 +1,6 @@
+app-header{
+  height: 7hv;
+}
+router-outlet{
+  height: 93hv;
+}

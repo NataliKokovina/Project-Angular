@@ -13,7 +13,13 @@ import {
   styleUrls: ['./sing-in.component.css']
 })
 export class SingInComponent implements OnInit {
+  singUp: boolean = false;
   public user: SingIn;
+
+  singUpClick(){
+    this.singUp = !this.singUp;
+    console.log(this.singUp);
+   }
 
   constructor(private socialAuthService: AuthService) { }
 
@@ -45,6 +51,7 @@ export class SingInComponent implements OnInit {
   }
 
 }
+
 
 // https://medium.com/@sarat.e99/hi-martin-please-make-sure-that-you-have-added-the-code-to-download-facebook-js-sdk-on-load-b4708490c5e2
 // https://www.npmjs.com/package/angular-6-social-login

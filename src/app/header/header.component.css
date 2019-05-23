@@ -1,9 +1,11 @@
 .header{
-  max-height: 10vh;
+  max-height: 100%;
+  min-width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-left: 2%;
-    margin-right: 5%;
+    padding-left: 2%;
+    padding-right: 5%;
+    background-color: #05727e;
 }
 
 .heading__img_logo {
@@ -20,12 +22,13 @@
 .nav-item {
     list-style: none;
     margin-left: 2%;
+    margin-top: 15px;
 }
 
 .nav-link {
     white-space: nowrap;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: #a2a2a2;
     padding: 15px;
@@ -36,5 +39,5 @@
 }
 
 .singIn{
-    font-size: 20px;
+    font-size: 25px;
 }

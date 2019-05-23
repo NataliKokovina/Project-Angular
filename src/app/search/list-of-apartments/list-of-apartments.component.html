@@ -1,12 +1,29 @@
-<div class="searchList">Результати пошуку:</div>
-<div class="wrap">
-  <ul class="list">
-    <ol class="listItem" *ngFor="let apartment of apartments" >
-    <p>назва: {{apartment?.name}}</p>
-    <p>місто: {{apartment?.adress.city}}</p>
-    <img class="imgApartment" src="{{apartment?.photo}}" alt="фото квартири {{apartment?.id}}">
-    </ol>
 
+<div class="wrapForAll">
+<div class="searchListWrap">
+  <div class="searchList">
+    <label class="nameOfApartmentLabel" for="name">Пошук за назвою:</label><br>
+    <input class="nameOfApartment" [(ngModel)]="searchApart" type="text" id="name" name="name">
+  </div>
+  <div class="wrap">
+      <!-- {{filtersName | json}} -->
+    <!-- <p class="errorApart" *ngIf="apartment" >За данними параметрами квартир не знайдено</p>  -->
+  <ul class="listItem">
+    <li class="items" *ngFor="let apartment of apartments | search:searchApart | place:filterType | rent: filteRent | city: searchCity"
+      [class.selected]="apartment === selectedApartament"
+      (click)="onSelect(apartment)">
+
+        <p class="apartName">{{apartment?.name}}</p>
+        <p class="apartCity">{{apartment?.adress.city}}</p>
+
+      <img class="imgApart" src="{{apartment?.photo}}" alt="фото квартири {{apartment?.id}}">
+      <div class="wrapPriceAndLink">
+        <p class="price">{{apartment?.price}} грн</p>
+        <a class="btn btn-sale" routerLink="/detail/{{apartment.id}}">Бронювати</a>
+      </div>
+    </li>
   </ul>
+  </div>
 </div>
+
 

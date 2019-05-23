@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MapGoogleComponent } from './map-google/map-google.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [MapGoogleComponent],
   imports: [
     CommonModule
   ]

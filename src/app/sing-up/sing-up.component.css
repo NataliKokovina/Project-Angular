@@ -1,4 +1,4 @@
-.backLoginForm{
+/* .backLoginForm{
   background-image: url('/assets/img/kvartiry.jpg');
   height: 90vh;
   background-size: cover;
@@ -7,24 +7,24 @@
   flex-grow: center;
   align-items: center;
   justify-content: center;
-}
-.mask{
+} */
+/* .mask{
   background-color: #ffffffb2;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   height: 90vh;
-}
+} */
 
 .loginForm_wrap{
   display: flex;
   align-items: center;
   flex-flow: column;
   justify-content: center;
-  width: 500px;
+  /* width: 500px;
   height: 450px;
-  border: 2px solid #a2a2a28e;
+  border: 2px solid #a2a2a28e; */
   color: #a2a2a2;
   margin: 0 auto;
 }
@@ -38,7 +38,7 @@
 }
 
 .inputForm{
-  width: 70%;
+  width: 350px;
   height: 45px;
   margin: 1% auto;
   font-size: 1rem;

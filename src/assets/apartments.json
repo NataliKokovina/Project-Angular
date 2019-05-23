@@ -1,7 +1,8 @@
 {
   "apartmentList":
   [{
-      "name": 1,
+      "id": 1,
+      "name": "1",
       "guests": 5,
       "photo": "/assets/img/1.jpg",
       "adress": {
@@ -28,6 +29,7 @@
         "workplace": false
       }
   },{
+      "id": 2,
       "name": "2",
       "guests": 2,
       "photo":"/assets/img/2.jpg",
@@ -55,6 +57,7 @@
         "workplace": false
       }
   },{
+      "id": 3,
       "name": "3",
       "guests": 3,
       "photo": "/assets/img/3.png",
@@ -82,6 +85,7 @@
         "workplace": false
       }
   },{
+      "id": 4,
       "name": "4",
       "guests": 2,
       "photo": "/assets/img/4.jpg",
@@ -109,6 +113,7 @@
         "workplace": false
       }
   },{
+      "id": 5,
       "name": "5",
       "guests": 3,
       "photo": "/assets/img/5.jpg",

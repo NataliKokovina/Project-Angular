@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, ApplicationRef } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RentMyApartmentComponent } from './rent-my-apartment/rent-my-apartment.component';
@@ -19,6 +19,18 @@ import { SingInModule } from './sing-in/sing-in.module';
 import { ListOfApartmentsComponent } from './search/list-of-apartments/list-of-apartments.component';
 import { ListOfParametersComponent } from './search/list-of-parameters/list-of-parameters.component';
 import { ApartamentInfComponent } from './search/apartament-inf/apartament-inf.component';
+import { ApartmentsComponent } from './apartments/apartments.component';
+import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
+import { HttpService } from './search/http.service'
+import { MapGoogleComponent } from './search/map-google/map-google.component';
+import { SearchPipe } from './search/list-of-apartments/search.pipe';
+import { environment} from '../environments/environmentMy';
+import { FilterPlacePipe } from '../app/search/list-of-parameters/searchType.pipe';
+import { ProfileComponent } from './profile/profile.component';
+import { FilterRentPipe } from './search/list-of-parameters/searchRentType.pipe';
+import { CityPipe } from './search/list-of-apartments/searchCity.pipe';
+// import {SearchPipe} from './search/list-of-apartments/search.pipe.ts'
 
 
 
@@ -33,7 +45,14 @@ import { ApartamentInfComponent } from './search/apartament-inf/apartament-inf.c
     HomeComponent,
     ListOfApartmentsComponent,
     ListOfParametersComponent,
-    ApartamentInfComponent
+    ApartamentInfComponent,
+    ApartmentsComponent,
+    MapGoogleComponent,
+    SearchPipe,
+    FilterPlacePipe,
+    ProfileComponent,
+    FilterRentPipe,
+    CityPipe
   ],
   imports: [
     BrowserModule,
@@ -45,9 +64,13 @@ import { ApartamentInfComponent } from './search/apartament-inf/apartament-inf.c
     FormsModule,
     CalendarModule,
     SingUpModule,
-    SingInModule
+    SingInModule,
+    CommonModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.apiKey
+    })
   ],
   providers: [HttpClientModule],
-  bootstrap: [AppComponent, HeaderComponent, HomeComponent]
+  bootstrap: [AppComponent, HeaderComponent, HomeComponent, ListOfApartmentsComponent, MapGoogleComponent]
 })
-export class AppModule { }
+export class AppModule {}

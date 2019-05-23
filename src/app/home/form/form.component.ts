@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Output, EventEmitter } from '@angular/core';
 import { Search } from '../search';
 import { Router } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FormGroup, FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -11,7 +12,8 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit{
-
+  @Output() searchInf = new EventEmitter<{city: any, start: any, last: any, people: any}>();
+  fileData: any;
   isMiniCalendar: boolean = false;
   activeOfPeople: boolean = false;
   clickOutsideCalendarEnabled: boolean = false;
@@ -20,6 +22,7 @@ export class FormComponent implements OnInit{
   dateStart: Date;
   dateFinish: Date;
   formSubmited: boolean = false;
+  // myUrl: string;
 
   public search: Search;
 
@@ -62,7 +65,9 @@ export class FormComponent implements OnInit{
   }
 
   // @ViewChild('calendar') calendar: any;
-  constructor(private router: Router) {}
+  constructor(private myHttp: HttpClient, private router: Router) {}
+
+
 
   onStart({start: startDate, last: lastDate}){
     this.search['dateStart'] = startDate;
@@ -70,26 +75,41 @@ export class FormComponent implements OnInit{
   }
 
   ngOnInit() {
-
-    // console.log(this.search);
-    // this.initSearchForm();
-    this.search = {
-      city: "Київ",
+     this.search = {
+      city: "",
       people: this.sumOfPeople,
       dateStart: new Date(),
       dateLast: new Date(),
     }
+    return this.search;
+
+
+
+
+    // console.log(this.search);
+    // this.initSearchForm();
+
     // todo: передача city
   }
   public submited(){
 
     this.formSubmited = true;
-    this.router.navigate(['/search'])
 
+    // this.myHttp.post('postgres://igor:pass@localhost:5432/daikhatu', this.search).subscribe(
+    //   (reslt) => {console.log(this.fileData = reslt)}
+    //   );
+
+    this.searchInf.emit({city: this.search.city, start: this.search.dateStart, last: this.search.dateLast, people:this.search.people})
+
+    this.router.navigate(['/search', { city: this.search.city}])
 
     // https://metanit.com/web/angular2/6.4.php
     // todo: прописать логику отправки данных
   }
+
+  // searchDate(){
+  //   this.searchInf.emit({city: this.search.city, start: this.search.dateStart, last: this.search.dateLast, people:this.search.people})
+  // };
   // initSearchForm() {
   //   this.searchForm = new FormGroup({
   //     city: new FormControl(),

@@ -1,25 +1,28 @@
 <div class="FiltersWrap">
 <div class="Filters">Фільтри: </div>
-<button type="submit" class="btn filtersBtn">Поиск</button>
+<!-- <button type="submit" class="btn filtersBtn">Пошук</button> -->
 </div>
 <form class="formWrap" action="">
-  <label class="nameOfApartmentLabel" for="name">Назва</label><br>
 
-  <input class="nameOfApartment" [(ngModel)]="filters.name" type="text" id="name" >
     <fieldset>
       <legend>Тип помешкання:  </legend>
       <section>
-        <input type="radio" name="placeType" id="house" value="1" >
+<!-- (click)="searchList()"  -->
+        <input (click)="searchList()" type="radio" name="placeType" id="allplace" value="" [(ngModel)]="typeF" >
+        <label for="allplace">Всі варіанти</label><br>
+        <input (click)="searchList()" type="radio" name="placeType" id="house" value="1" [(ngModel)]="typeF" >
         <label for="house">Приватний будинок</label><br>
-        <input type="radio" name="placeType" id="flat" value="2" >
+        <input (click)="searchList()" type="radio" name="placeType" id="flat" value="2" [(ngModel)]="typeF">
         <label for="flat">Квартира</label>
       </section>
       <section> <p>Тип здачі:  </p>
-        <input type="radio" name="rentType" id="all" value="1" >
+        <input (click)="searchList()" type="radio" name="rentType" id="allRentType" value="" [(ngModel)]="rentF" >
+        <label for="allRentType">Всі варіанти</label><br>
+        <input (click)="searchList()" type="radio" name="rentType" id="all" value="1" [(ngModel)]="rentF" >
         <label for="all">Все помешкання</label><br>
-        <input type="radio" name="rentType" id="room" value="2" >
+        <input (click)="searchList()" type="radio" name="rentType" id="room" value="2" [(ngModel)]="rentF">
         <label for="room">Кімната</label><br>
-        <input type="radio" name="rentType" id="bed" value="3" >
+        <input (click)="searchList()" type="radio" name="rentType" id="bed" value="3" [(ngModel)]="rentF">
         <label for="bed">Ліжко-місце</label>
       </section>
   </fieldset>

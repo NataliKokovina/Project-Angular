@@ -1,0 +1,29 @@
+<agm-map #gm [latitude]="lat" [longitude]="lng" (mapClick)="onChoseLocation($event)" [zoom]="zoom">
+    <!-- <agm-marker-cluster maxZoom="13"> -->
+        <agm-marker
+        *ngFor="let apartment of apartments | place:filterType | rent: filteRent | city:searchCity"
+        [latitude]="apartment.lat"
+        [longitude]="apartment.lng"
+        [label]="{color: 'white', text: apartment.price}"
+        (mouseOver)="onMouseOver(infoWindow, gm)"
+        (markerClick)="onClickInfoView(apartment.name)"
+        >
+        <agm-info-window [disableAutoPan]="false" #infoWindow>
+          <div>
+              <div class="infoWindow">
+                  <span class="infoWindowName">{{apartment.name}},</span>
+                   {{apartment.price}} грн
+               </div>
+               <div>
+                   <a class="btn infoWindowLink" routerLink="/detail/{{apartment.id}}">Детальніше</a>
+               </div>
+          </div>
+
+          </agm-info-window>
+
+
+
+</agm-marker>
+    <!-- </agm-marker-cluster> -->
+    <!-- (click)="onClickInfoView()" -->
+</agm-map>

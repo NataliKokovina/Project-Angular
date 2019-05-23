@@ -1,8 +1,8 @@
 export class UserReg {
    name: string;
    email: string;
-   password: string;
-   tel: number;
+  //  password: string;
+   tel: string;
   constructor() {
 
   }
