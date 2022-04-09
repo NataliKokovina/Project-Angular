@@ -26,7 +26,7 @@
     "angular2-click-outside": "^0.1.0",
     "core-js": "^2.5.4",
     "mini-calendar": "^2.0.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng-click-outside": "^4.0.0",
     "ngx-dropdown-list": "^1.1.1",
     "ngx-dropdown-search": "0.0.20",
